@@ -1,0 +1,89 @@
+archetype (adl_version=1.4; uid=da017104-1550-3bde-9af8-3944fd684028)
+	openEHR-EHR-CLUSTER.bosniak_klassifikasjon.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["references"] = <"https://radiopaedia.org/articles/bosniak-classification-of-cystic-renal-masses-version-2019">
+		["MD5-CAM-1.0.1"] = <"B6F414FD8BF1233220D07E921F2CF088">
+		["build_uid"] = <"32d2641c-084d-3c2c-945f-fab05c589fe2">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Bosniak klassifikasjon
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Bosniak klassifikasjon CT
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0004,    -- Klasse I
+							at0005,    -- Klasse II
+							at0006,    -- Klasse IIF
+							at0007,    -- Klasse III
+							at0008]    -- Klasse IV
+						}
+					}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Versjon av bosniak
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Bosniak klassifikasjon">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Bosniak klassifikasjon CT">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Versjon av bosniak">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Klasse I">
+					description = <"well-defined thin (≤2 mm) smooth wall">
+				>
+				["at0005"] = <
+					text = <"Klasse II">
+					description = <"six types all with thin (≤2 mm) smooth walls">
+				>
+				["at0006"] = <
+					text = <"Klasse IIF">
+					description = <"smooth minimally thickened (3 mm) enhancing wall">
+				>
+				["at0007"] = <
+					text = <"Klasse III">
+					description = <"one or more walls or septa that are">
+				>
+				["at0008"] = <
+					text = <"Klasse IV">
+					description = <"one or more enhancing nodule(s) ">
+				>
+			>
+		>
+	>
