@@ -1,0 +1,163 @@
+archetype (adl_version=1.4; uid=4561ea76-8f3b-388a-8346-ff2196272192)
+	openEHR-EHR-CLUSTER.nyrecancer_kontroll.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"C91BF326EF7F2BCC2C884AAD34CB729E">
+		["build_uid"] = <"2a50e48e-5c13-3b26-860f-49aab28f6cc1">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Nyrecancer kontroll
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- CT Abdomen
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0003,    -- Negativ
+							at0004,    -- Lokalt residiv
+							at0005,    -- Lymfeknuter
+							at0006]    -- Metastaser
+						}
+					}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- CT Thorax
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0008,    -- Ikke tatt
+							at0009,    -- Negative
+							at0010,    -- Metastaser
+							at0011]    -- Uspesifikt
+						}
+					}
+				}
+			}
+			ELEMENT[at0014] occurrences matches {0..1} matches {    -- Kreatinin
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::119]>
+						list = <
+							["1"] = <
+								units = <"umol/l">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0012] occurrences matches {0..1} matches {    -- GFR
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::586]>
+						list = <
+							["1"] = <
+								units = <"ml/min/1.73m2">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0013] occurrences matches {0..1} matches {    -- Hb
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::119]>
+						list = <
+							["1"] = <
+								units = <"gm/100ml">
+							>
+						>
+					>
+				}
+			}
+			allow_archetype CLUSTER[at0016] occurrences matches {0..*} matches {    -- ECOG
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Nyrecancer kontroll">
+					description = <"unknown">
+				>
+				["at0002"] = <
+					text = <"CT Abdomen">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Negativ">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Lokalt residiv">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Lymfeknuter">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Metastaser">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"CT Thorax">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Ikke tatt">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Negative">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Metastaser">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Uspesifikt">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"GFR">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Hb">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Kreatinin">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"ECOG">
+					description = <"*">
+				>
+			>
+		>
+	>
