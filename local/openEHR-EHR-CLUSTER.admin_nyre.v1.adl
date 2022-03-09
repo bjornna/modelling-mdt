@@ -1,0 +1,50 @@
+archetype (adl_version=1.4; uid=a7f1c6eb-e6e0-34a4-b4ef-bebbdeee4ffd)
+	openEHR-EHR-CLUSTER.admin_nyre.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"A9269E4E9BA7C025BBD92CE2B366FB12">
+		["build_uid"] = <"0e0952c9-93ac-3f64-96d0-8d8845b78db0">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Admin nyre
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0017] occurrences matches {0..1} matches {    -- Ingen kjente relevante sykdommer
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Admin nyre">
+					description = <"unknown">
+				>
+				["at0017"] = <
+					text = <"Ingen kjente relevante sykdommer">
+					description = <"*">
+				>
+			>
+		>
+	>
