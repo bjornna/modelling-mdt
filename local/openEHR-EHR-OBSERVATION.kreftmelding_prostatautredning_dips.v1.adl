@@ -1,0 +1,1173 @@
+archetype (adl_version=1.4; uid=45f8da66-545f-3abc-9517-47f0fd60687a)
+	openEHR-EHR-OBSERVATION.kreftmelding_prostatautredning_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"B3FB2449E48FA604B11120DECB5A52EE">
+		["build_uid"] = <"ceb794e1-3819-3e1f-be20-113782361eae">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Kreftmelding solidesvulster dips
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0055] occurrences matches {0..1} matches {    -- Funn i utredningen
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0056] occurrences matches {0..1} matches {    -- Funn i utredningen
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0057,    -- Primærtumor (med eller uten metastase(r))
+															at0058]    -- Kun metastase(r)
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0179] occurrences matches {0..1} matches {    -- Sykehistorie
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0182] occurrences matches {0..1} matches {    -- PSA-verdi ved diagnosetidspunkt
+												value matches {
+													DV_QUANTITY matches {*}
+												}
+											}
+											ELEMENT[at0183] occurrences matches {0..1} matches {    -- Ikke tatt
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0184] occurrences matches {0..1} matches {    -- Ukjent
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0185] occurrences matches {0..1} matches {    -- Var vannlatingsproblemer en del av årsak til utredningen?
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0186,    -- Ja
+															at0187,    -- Nei
+															at0188]    -- Ukjent
+														}
+													}
+												}
+											}
+											ELEMENT[at0189] occurrences matches {0..1} matches {    -- Var kreftsymptomer (smerter, anemi, eller annet) en del av årsak til utredningen?
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0190,    -- Ja
+															at0191,    -- Nei
+															at0192]    -- Ukjent
+														}
+													}
+												}
+											}
+											allow_archetype CLUSTER[at0177] occurrences matches {0..*} matches {    -- ECOG
+												include
+													archetype_id/value matches {/.*/}
+											}
+											ELEMENT[at0193] occurrences matches {0..1} matches {    -- Prostatavolum
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::129]>
+														list = <
+															["1"] = <
+																units = <"ml">
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0194] occurrences matches {0..1} matches {    -- Prostatavolum ukjent
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0195] occurrences matches {0..1} matches {    -- Diagnostikk av primærtumor
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0196] occurrences matches {0..1} matches {    -- Er det gjort MR prostata?
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0197] occurrences matches {0..1} matches {    -- Utført dato (dd.mm.åååå)
+												value matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
+											ELEMENT[at0198] occurrences matches {0..1} matches {    -- Ukjent dato
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0199] occurrences matches {0..1} matches {    -- Er det gjort annen bildediagnostikk av primærtumor?
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0200] occurrences matches {0..1} matches {    -- Spesifiser annen undersøkelse
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0201] occurrences matches {0..1} matches {    -- Celle-/vevsprøver?
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											CLUSTER[at0202] occurrences matches {0..1} matches {    -- Undersøkelser
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0203] occurrences matches {0..1} matches {    -- Undersøkelser
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0204,    -- Biopsi
+																	at0206,    -- TUR-P
+																	at0208]    -- Annet
+																}
+															}
+														}
+													}
+													ELEMENT[at0209] occurrences matches {0..1} matches {    -- Spesifiser andre undersøkelser
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0210] occurrences matches {0..1} matches {    -- Dato sykdommen ble bekreftet/diagnosedato  (dd.mm.åååå)
+														value matches {
+															DV_DATE_TIME matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0174] occurrences matches {0..*} matches {    -- Patologilaboratorium
+										include
+											archetype_id/value matches {/.*/}
+									}
+									CLUSTER[at0211] occurrences matches {0..1} matches {    -- Sykdomsutbredelse etter ferdig primærutredning og før primærbehandling
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0212] occurrences matches {0..1} matches {    -- Palpatorisk T-stadium høyre side (laveste stadium velges ved tvil)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0288,    -- Ikke palpabel tumor (tilsvarende T0/T1)
+															at0289,    -- Tumor uten ekstraprostatisk vekst (tilsvarende T2)
+															at0290,    -- Ekstraprostatisk vekst (tilsvarende T3a)
+															at0291,    -- Innvekst i vesikler (tilsvarende T3b)
+															at0292,    -- Innvekst i omliggende vev (tilsvarende T4)
+															at0293]    -- Ikke vurdert / kan ikke vurderes (tilsvarende TX)
+														}
+													}
+												}
+											}
+											ELEMENT[at0213] occurrences matches {0..1} matches {    -- Palpatorisk T-stadium venstre side (laveste stadium velges ved tvil)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0294,    -- Ikke palpabel tumor (tilsvarende T0/T1)
+															at0295,    -- Tumor uten ekstraprostatisk vekst (tilsvarende T2)
+															at0296,    -- Ekstraprostatisk vekst (tilsvarende T3a)
+															at0297,    -- Innvekst i vesikler (tilsvarende T3b)
+															at0298,    -- Innvekst i omliggende vev (tilsvarende T4)
+															at0299]    -- Ikke vurdert / kan ikke vurderes (tilsvarende TX)
+														}
+													}
+												}
+											}
+											ELEMENT[at0214] occurrences matches {0..1} matches {    -- Samlet palpatorisk T-stadium
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0215] occurrences matches {0..1} matches {    -- PI-RADS høyre side (laveste stadium velges ved tvil)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0300,    -- 1
+															at0301,    -- 2
+															at0302,    -- 3
+															at0303,    -- 4
+															at0304,    -- 5
+															at0305]    -- Ukjent
+														}
+													}
+												}
+											}
+											ELEMENT[at0216] occurrences matches {0..1} matches {    -- PI-RADS venstre side (laveste stadium velges ved tvil)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0306,    -- 1
+															at0307,    -- 2
+															at0308,    -- 3
+															at0309,    -- 4
+															at0310,    -- 5
+															at0311]    -- Ukjent
+														}
+													}
+												}
+											}
+											ELEMENT[at0217] occurrences matches {0..1} matches {    -- MR-basert T-stadium høyre side (laveste stadium velges ved tvil)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0312,    -- Tumor uten ekstraprostatisk vekst (tilsvarende T2)
+															at0313,    -- Ekstraprostatisk vekst (tilsvarende T3a)
+															at0314,    -- Innvekst i vesikler (tilsvarende T3b)
+															at0315,    -- Innvekst i omliggende vev (tilsvarende T4)
+															at0316]    -- Ikke vurdert / kan ikke vurderes (tilsvarende TX)
+														}
+													}
+												}
+											}
+											ELEMENT[at0218] occurrences matches {0..1} matches {    -- MR-basert T-stadium T-stadium venstre side (laveste stadium velges ved tvil)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0317,    -- Tumor uten ekstraprostatisk vekst (tilsvarende T2)
+															at0318,    -- Ekstraprostatisk vekst (tilsvarende T3a)
+															at0319,    -- Innvekst i vesikler (tilsvarende T3b)
+															at0320,    -- Innvekst i omliggende vev (tilsvarende T4)
+															at0321]    -- Ikke vurdert / kan ikke vurderes (tilsvarende TX)
+														}
+													}
+												}
+											}
+											ELEMENT[at0219] occurrences matches {0..1} matches {    -- Samlet MR-basert T-stadium
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0220] occurrences matches {0..1} matches {    -- Totalvurdering av klinisk T (laveste stadium velges ved tvil)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0322,    -- TX - Primærtumor kan ikke vurderes
+															at0323,    -- T0 - Primærtumor ikke påvist
+															at0324,    -- T1 - Ingen tumor påvisbar med palpasjon, ultralyd eller annen radiologisk metode, men cancer er påvist ved prostatabiopsier
+															at0325,    -- T1a - Ikke palpabel tumor, påvist ved TUR-P, < 5 % av resektatet
+															at0326,    -- T1b - Ikke palpabel tumor, påvist ved TUR-P, ≥5% av resektatet
+															at0327,    -- T1c - Ikke palpabel tumor, påvist ved nålebiopsi (for eksempel på grunn av forhøyet PSA)
+															at0328,    -- T2 - Palpabel eller synlig tumor begrenset til prostatakjertelen (innenfor kapselbegrensning)
+															at0329,    -- T2a - Tumor omfatter en halv lapp eller mindre
+															at0330,    -- T2b - Tumor omfatter mer enn halvparten av en lapp, men ikke begge lapper.
+															at0331,    -- T2c - Tumor omfatter begge lapper
+															at0332,    -- T3 - Ekstrakapsulær tumorvekst. NB: Innvekst i apex prostata eller inn i (men ikke gjennom) prostatakapselen klassifiseres som T2
+															at0333,    -- T3a - Ekstrakapsulær vekst (unilateral eller bilateral)
+															at0334,    -- T3b - Tumor vokser inn i sædblære(r)
+															at0335]    -- T4 - Tumor er fiksert eller vokser inn i nabostruktur(er) annet enn sædblære(r)
+														}
+													}
+												}
+											}
+											ELEMENT[at0221] occurrences matches {0..1} matches {    -- Hvem har gjort totalvurderingen av klinisk T?
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0336,    -- MDT (tverrfaglig møte)
+															at0337,    -- Utredende lege
+															at0338]    -- Melder (ikke utredende lege)
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0222] occurrences matches {0..1} matches {    -- Sykdomsutbredelse ved utredning av metastase(r)
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0223] occurrences matches {0..1} matches {    -- Er regionale lymfeknutemetastaser påvist (N-sykdom)?
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0339,    -- NX = Ikke undersøkt
+															at0340,    -- N0 = Ingen regionale lymfeknutemetastaser
+															at0341]    -- N1 = Regionale lymfeknutemetastaser
+														}
+													}
+												}
+											}
+											CLUSTER[at0224] occurrences matches {0..1} matches {    -- Utredningsmetode (velg viktigste undersøkelse som basis for cN)
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0225] occurrences matches {0..1} matches {    -- Utredningsmetode
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0342,    -- CT
+																	at0343,    -- MR
+																	at0344,    -- PET
+																	at0345,    -- Lymfadenektomi (diagnostisk i forkant av behandling)
+																	at0346,    -- Annet
+																	at0347]    -- Ukjent
+																}
+															}
+														}
+													}
+													ELEMENT[at0226] occurrences matches {0..1} matches {    -- Spesifiser
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0227] occurrences matches {0..1} matches {    -- Er fjernmetastaser, inkludert fjerne lymfeknutemetastaser, påvist (M-sykdom)?
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0348,    -- Ikke undersøkt
+																	at0349,    -- M0 = Ingen fjernmetastaser
+																	at0350]    -- M1 = Fjernmetastaser
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0228] occurrences matches {0..1} matches {    -- Lokalisasjon
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0233] occurrences matches {0..3} matches {    -- Lokalisasjon
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0234,    -- Ikke-regionale lymfeknuter (M1a)
+																	at0236,    -- Skjelett (M1b)
+																	at0238]    -- Annet (M1c)
+																}
+															}
+														}
+													}
+													ELEMENT[at0239] occurrences matches {0..1} matches {    -- Spesifiser lokalisasjon
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0240] occurrences matches {0..1} matches {    -- Utredningsmetode
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0241] occurrences matches {0..9} matches {    -- Utredningsmetode
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0242,    -- CT
+																	at0244,    -- MR
+																	at0246,    -- PET
+																	at0248,    -- Skjelettscintigrafi
+																	at0250,    -- Røntgen thorax
+																	at0252,    -- Røntgen korsrygg/bekken
+																	at0254,    -- Cytologi
+																	at0256,    -- Biopsi
+																	at0258,    -- Annet
+																	at0260]    -- Ukjent
+																}
+															}
+														}
+													}
+													ELEMENT[at0261] occurrences matches {0..1} matches {    -- Spesifiser utredningsmetode
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0262] occurrences matches {0..1} matches {    -- Dato for utredning av metastaser (dd.mm.åååå)
+														value matches {
+															DV_DATE_TIME matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0263] occurrences matches {0..1} matches {    -- Klinisk TNM
+										items cardinality matches {1..*; unordered} matches {
+											allow_archetype CLUSTER[at0176] occurrences matches {0..*} matches {    -- Klinisk TNM/Stadium
+												include
+													archetype_id/value matches {/.*/}
+											}
+											ELEMENT[at0264] occurrences matches {0..1} matches {    -- Klinisk sikker kreft
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0265,    -- Ja
+															at0266]    -- Usikker
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0267] occurrences matches {0..1} matches {    -- Oppfølging/tiltak
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0268] occurrences matches {0..1} matches {    -- Oppfølging/tiltak
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0269,    -- Kurativt rettet lokalbehandling
+															at0270,    -- Aktiv overvåkning
+															at0271,    -- Antihormonell behandling alene
+															at0272,    -- Observasjon / ikke kandidat for radikal behandling
+															at0273,    -- Behandlingsbesluttning ikke tatt
+															at0274,    -- Kjemoterapi
+															at0275,    -- Henvist videre til
+															at0276]    -- Ukjent
+														}
+													}
+												}
+											}
+											CLUSTER[at0277] occurrences matches {0..1} matches {    -- Behandlingssted
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0278] occurrences matches {0..1} matches {    -- Behandlingssted
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0279,    -- Egen institusjon
+																	at0280,    -- Annen norsk institusjon / spesialist
+																	at0281,    -- Allmennpraktiker
+																	at0282,    -- Samarbeid egen institusjon og allmennpraktiker
+																	at0283,    -- Utlandet (spesifiser)
+																	at0284]    -- Ukjent
+																}
+															}
+														}
+													}
+													ELEMENT[at0285] occurrences matches {0..1} matches {    -- Spesifiser behandlingssted
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0286] occurrences matches {0..1} matches {    -- Behandlingsdato (dd.mm.åååå)
+														value matches {
+															DV_DATE_TIME matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0287] occurrences matches {0..1} matches {    -- Kommentarer
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									allow_archetype CLUSTER[at0175] occurrences matches {0..*} matches {    -- Melder
+										include
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Kreftmelding solidesvulster dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0055"] = <
+					text = <"Funn i utredningen">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Funn i utredningen">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Primærtumor (med eller uten metastase(r))">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Kun metastase(r)">
+					description = <"*">
+				>
+				["at0174"] = <
+					text = <"Patologilaboratorium">
+					description = <"*">
+				>
+				["at0175"] = <
+					text = <"Melder">
+					description = <"*">
+				>
+				["at0176"] = <
+					text = <"Klinisk TNM/Stadium">
+					description = <"*">
+				>
+				["at0177"] = <
+					text = <"ECOG">
+					description = <"*">
+				>
+				["at0179"] = <
+					text = <"Sykehistorie">
+					description = <"*">
+				>
+				["at0182"] = <
+					text = <"PSA-verdi ved diagnosetidspunkt">
+					description = <"*">
+				>
+				["at0183"] = <
+					text = <"Ikke tatt">
+					description = <"*">
+				>
+				["at0184"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0185"] = <
+					text = <"Var vannlatingsproblemer en del av årsak til utredningen?">
+					description = <"*">
+				>
+				["at0186"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0187"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0188"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0189"] = <
+					text = <"Var kreftsymptomer (smerter, anemi, eller annet) en del av årsak til utredningen?">
+					description = <"*">
+				>
+				["at0190"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0191"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0192"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0193"] = <
+					text = <"Prostatavolum">
+					description = <"*">
+				>
+				["at0194"] = <
+					text = <"Prostatavolum ukjent">
+					description = <"*">
+				>
+				["at0195"] = <
+					text = <"Diagnostikk av primærtumor">
+					description = <"*">
+				>
+				["at0196"] = <
+					text = <"Er det gjort MR prostata?">
+					description = <"*">
+				>
+				["at0197"] = <
+					text = <"Utført dato (dd.mm.åååå)">
+					description = <"*">
+				>
+				["at0198"] = <
+					text = <"Ukjent dato">
+					description = <"*">
+				>
+				["at0199"] = <
+					text = <"Er det gjort annen bildediagnostikk av primærtumor?">
+					description = <"*">
+				>
+				["at0200"] = <
+					text = <"Spesifiser annen undersøkelse">
+					description = <"*">
+				>
+				["at0201"] = <
+					text = <"Celle-/vevsprøver?">
+					description = <"*">
+				>
+				["at0202"] = <
+					text = <"Undersøkelser">
+					description = <"*">
+				>
+				["at0203"] = <
+					text = <"Undersøkelser">
+					description = <"*">
+				>
+				["at0204"] = <
+					text = <"Biopsi">
+					description = <"">
+				>
+				["at0206"] = <
+					text = <"TUR-P">
+					description = <"">
+				>
+				["at0208"] = <
+					text = <"Annet">
+					description = <"">
+				>
+				["at0209"] = <
+					text = <"Spesifiser andre undersøkelser">
+					description = <"*">
+				>
+				["at0210"] = <
+					text = <"Dato sykdommen ble bekreftet/diagnosedato  (dd.mm.åååå)">
+					description = <"*">
+				>
+				["at0211"] = <
+					text = <"Sykdomsutbredelse etter ferdig primærutredning og før primærbehandling">
+					description = <"*">
+				>
+				["at0212"] = <
+					text = <"Palpatorisk T-stadium høyre side (laveste stadium velges ved tvil)">
+					description = <"*">
+				>
+				["at0213"] = <
+					text = <"Palpatorisk T-stadium venstre side (laveste stadium velges ved tvil)">
+					description = <"*">
+				>
+				["at0214"] = <
+					text = <"Samlet palpatorisk T-stadium">
+					description = <"*">
+				>
+				["at0215"] = <
+					text = <"PI-RADS høyre side (laveste stadium velges ved tvil)">
+					description = <"*">
+				>
+				["at0216"] = <
+					text = <"PI-RADS venstre side (laveste stadium velges ved tvil)">
+					description = <"*">
+				>
+				["at0217"] = <
+					text = <"MR-basert T-stadium høyre side (laveste stadium velges ved tvil)">
+					description = <"*">
+				>
+				["at0218"] = <
+					text = <"MR-basert T-stadium T-stadium venstre side (laveste stadium velges ved tvil)">
+					description = <"*">
+				>
+				["at0219"] = <
+					text = <"Samlet MR-basert T-stadium">
+					description = <"*">
+				>
+				["at0220"] = <
+					text = <"Totalvurdering av klinisk T (laveste stadium velges ved tvil)">
+					description = <"*">
+				>
+				["at0221"] = <
+					text = <"Hvem har gjort totalvurderingen av klinisk T?">
+					description = <"*">
+				>
+				["at0222"] = <
+					text = <"Sykdomsutbredelse ved utredning av metastase(r)">
+					description = <"*">
+				>
+				["at0223"] = <
+					text = <"Er regionale lymfeknutemetastaser påvist (N-sykdom)?">
+					description = <"*">
+				>
+				["at0224"] = <
+					text = <"Utredningsmetode (velg viktigste undersøkelse som basis for cN)">
+					description = <"*">
+				>
+				["at0225"] = <
+					text = <"Utredningsmetode">
+					description = <"*">
+				>
+				["at0226"] = <
+					text = <"Spesifiser">
+					description = <"*">
+				>
+				["at0227"] = <
+					text = <"Er fjernmetastaser, inkludert fjerne lymfeknutemetastaser, påvist (M-sykdom)?">
+					description = <"*">
+				>
+				["at0228"] = <
+					text = <"Lokalisasjon">
+					description = <"*">
+				>
+				["at0233"] = <
+					text = <"Lokalisasjon">
+					description = <"*">
+				>
+				["at0234"] = <
+					text = <"Ikke-regionale lymfeknuter (M1a)">
+					description = <"">
+				>
+				["at0236"] = <
+					text = <"Skjelett (M1b)">
+					description = <"">
+				>
+				["at0238"] = <
+					text = <"Annet (M1c)">
+					description = <"">
+				>
+				["at0239"] = <
+					text = <"Spesifiser lokalisasjon">
+					description = <"*">
+				>
+				["at0240"] = <
+					text = <"Utredningsmetode">
+					description = <"*">
+				>
+				["at0241"] = <
+					text = <"Utredningsmetode">
+					description = <"*">
+				>
+				["at0242"] = <
+					text = <"CT">
+					description = <"">
+				>
+				["at0244"] = <
+					text = <"MR">
+					description = <"">
+				>
+				["at0246"] = <
+					text = <"PET">
+					description = <"">
+				>
+				["at0248"] = <
+					text = <"Skjelettscintigrafi">
+					description = <"">
+				>
+				["at0250"] = <
+					text = <"Røntgen thorax">
+					description = <"">
+				>
+				["at0252"] = <
+					text = <"Røntgen korsrygg/bekken">
+					description = <"">
+				>
+				["at0254"] = <
+					text = <"Cytologi">
+					description = <"">
+				>
+				["at0256"] = <
+					text = <"Biopsi">
+					description = <"">
+				>
+				["at0258"] = <
+					text = <"Annet">
+					description = <"">
+				>
+				["at0260"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0261"] = <
+					text = <"Spesifiser utredningsmetode">
+					description = <"*">
+				>
+				["at0262"] = <
+					text = <"Dato for utredning av metastaser (dd.mm.åååå)">
+					description = <"*">
+				>
+				["at0263"] = <
+					text = <"Klinisk TNM">
+					description = <"*">
+				>
+				["at0264"] = <
+					text = <"Klinisk sikker kreft">
+					description = <"*">
+				>
+				["at0265"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0266"] = <
+					text = <"Usikker">
+					description = <"">
+				>
+				["at0267"] = <
+					text = <"Oppfølging/tiltak">
+					description = <"*">
+				>
+				["at0268"] = <
+					text = <"Oppfølging/tiltak">
+					description = <"*">
+				>
+				["at0269"] = <
+					text = <"Kurativt rettet lokalbehandling">
+					description = <"">
+				>
+				["at0270"] = <
+					text = <"Aktiv overvåkning">
+					description = <"">
+				>
+				["at0271"] = <
+					text = <"Antihormonell behandling alene">
+					description = <"">
+				>
+				["at0272"] = <
+					text = <"Observasjon / ikke kandidat for radikal behandling">
+					description = <"">
+				>
+				["at0273"] = <
+					text = <"Behandlingsbesluttning ikke tatt">
+					description = <"">
+				>
+				["at0274"] = <
+					text = <"Kjemoterapi">
+					description = <"">
+				>
+				["at0275"] = <
+					text = <"Henvist videre til">
+					description = <"">
+				>
+				["at0276"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0277"] = <
+					text = <"Behandlingssted">
+					description = <"*">
+				>
+				["at0278"] = <
+					text = <"Behandlingssted">
+					description = <"*">
+				>
+				["at0279"] = <
+					text = <"Egen institusjon">
+					description = <"">
+				>
+				["at0280"] = <
+					text = <"Annen norsk institusjon / spesialist">
+					description = <"">
+				>
+				["at0281"] = <
+					text = <"Allmennpraktiker">
+					description = <"">
+				>
+				["at0282"] = <
+					text = <"Samarbeid egen institusjon og allmennpraktiker">
+					description = <"">
+				>
+				["at0283"] = <
+					text = <"Utlandet (spesifiser)">
+					description = <"">
+				>
+				["at0284"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0285"] = <
+					text = <"Spesifiser behandlingssted">
+					description = <"*">
+				>
+				["at0286"] = <
+					text = <"Behandlingsdato (dd.mm.åååå)">
+					description = <"*">
+				>
+				["at0287"] = <
+					text = <"Kommentarer">
+					description = <"*">
+				>
+				["at0288"] = <
+					text = <"Ikke palpabel tumor (tilsvarende T0/T1)">
+					description = <"">
+				>
+				["at0289"] = <
+					text = <"Tumor uten ekstraprostatisk vekst (tilsvarende T2)">
+					description = <"">
+				>
+				["at0290"] = <
+					text = <"Ekstraprostatisk vekst (tilsvarende T3a)">
+					description = <"">
+				>
+				["at0291"] = <
+					text = <"Innvekst i vesikler (tilsvarende T3b)">
+					description = <"">
+				>
+				["at0292"] = <
+					text = <"Innvekst i omliggende vev (tilsvarende T4)">
+					description = <"">
+				>
+				["at0293"] = <
+					text = <"Ikke vurdert / kan ikke vurderes (tilsvarende TX)">
+					description = <"">
+				>
+				["at0294"] = <
+					text = <"Ikke palpabel tumor (tilsvarende T0/T1)">
+					description = <"">
+				>
+				["at0295"] = <
+					text = <"Tumor uten ekstraprostatisk vekst (tilsvarende T2)">
+					description = <"">
+				>
+				["at0296"] = <
+					text = <"Ekstraprostatisk vekst (tilsvarende T3a)">
+					description = <"">
+				>
+				["at0297"] = <
+					text = <"Innvekst i vesikler (tilsvarende T3b)">
+					description = <"">
+				>
+				["at0298"] = <
+					text = <"Innvekst i omliggende vev (tilsvarende T4)">
+					description = <"">
+				>
+				["at0299"] = <
+					text = <"Ikke vurdert / kan ikke vurderes (tilsvarende TX)">
+					description = <"">
+				>
+				["at0300"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0301"] = <
+					text = <"2">
+					description = <"">
+				>
+				["at0302"] = <
+					text = <"3">
+					description = <"">
+				>
+				["at0303"] = <
+					text = <"4">
+					description = <"">
+				>
+				["at0304"] = <
+					text = <"5">
+					description = <"">
+				>
+				["at0305"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0306"] = <
+					text = <"1">
+					description = <"">
+				>
+				["at0307"] = <
+					text = <"2">
+					description = <"">
+				>
+				["at0308"] = <
+					text = <"3">
+					description = <"">
+				>
+				["at0309"] = <
+					text = <"4">
+					description = <"">
+				>
+				["at0310"] = <
+					text = <"5">
+					description = <"">
+				>
+				["at0311"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0312"] = <
+					text = <"Tumor uten ekstraprostatisk vekst (tilsvarende T2)">
+					description = <"">
+				>
+				["at0313"] = <
+					text = <"Ekstraprostatisk vekst (tilsvarende T3a)">
+					description = <"">
+				>
+				["at0314"] = <
+					text = <"Innvekst i vesikler (tilsvarende T3b)">
+					description = <"">
+				>
+				["at0315"] = <
+					text = <"Innvekst i omliggende vev (tilsvarende T4)">
+					description = <"">
+				>
+				["at0316"] = <
+					text = <"Ikke vurdert / kan ikke vurderes (tilsvarende TX)">
+					description = <"">
+				>
+				["at0317"] = <
+					text = <"Tumor uten ekstraprostatisk vekst (tilsvarende T2)">
+					description = <"">
+				>
+				["at0318"] = <
+					text = <"Ekstraprostatisk vekst (tilsvarende T3a)">
+					description = <"">
+				>
+				["at0319"] = <
+					text = <"Innvekst i vesikler (tilsvarende T3b)">
+					description = <"">
+				>
+				["at0320"] = <
+					text = <"Innvekst i omliggende vev (tilsvarende T4)">
+					description = <"">
+				>
+				["at0321"] = <
+					text = <"Ikke vurdert / kan ikke vurderes (tilsvarende TX)">
+					description = <"">
+				>
+				["at0322"] = <
+					text = <"TX - Primærtumor kan ikke vurderes">
+					description = <"">
+				>
+				["at0323"] = <
+					text = <"T0 - Primærtumor ikke påvist">
+					description = <"">
+				>
+				["at0324"] = <
+					text = <"T1 - Ingen tumor påvisbar med palpasjon, ultralyd eller annen radiologisk metode, men cancer er påvist ved prostatabiopsier">
+					description = <"">
+				>
+				["at0325"] = <
+					text = <"T1a - Ikke palpabel tumor, påvist ved TUR-P, < 5 % av resektatet">
+					description = <"">
+				>
+				["at0326"] = <
+					text = <"T1b - Ikke palpabel tumor, påvist ved TUR-P, ≥5% av resektatet">
+					description = <"">
+				>
+				["at0327"] = <
+					text = <"T1c - Ikke palpabel tumor, påvist ved nålebiopsi (for eksempel på grunn av forhøyet PSA)">
+					description = <"">
+				>
+				["at0328"] = <
+					text = <"T2 - Palpabel eller synlig tumor begrenset til prostatakjertelen (innenfor kapselbegrensning)">
+					description = <"">
+				>
+				["at0329"] = <
+					text = <"T2a - Tumor omfatter en halv lapp eller mindre">
+					description = <"">
+				>
+				["at0330"] = <
+					text = <"T2b - Tumor omfatter mer enn halvparten av en lapp, men ikke begge lapper.">
+					description = <"">
+				>
+				["at0331"] = <
+					text = <"T2c - Tumor omfatter begge lapper">
+					description = <"">
+				>
+				["at0332"] = <
+					text = <"T3 - Ekstrakapsulær tumorvekst. NB: Innvekst i apex prostata eller inn i (men ikke gjennom) prostatakapselen klassifiseres som T2">
+					description = <"">
+				>
+				["at0333"] = <
+					text = <"T3a - Ekstrakapsulær vekst (unilateral eller bilateral)">
+					description = <"">
+				>
+				["at0334"] = <
+					text = <"T3b - Tumor vokser inn i sædblære(r)">
+					description = <"">
+				>
+				["at0335"] = <
+					text = <"T4 - Tumor er fiksert eller vokser inn i nabostruktur(er) annet enn sædblære(r)">
+					description = <"">
+				>
+				["at0336"] = <
+					text = <"MDT (tverrfaglig møte)">
+					description = <"">
+				>
+				["at0337"] = <
+					text = <"Utredende lege">
+					description = <"">
+				>
+				["at0338"] = <
+					text = <"Melder (ikke utredende lege)">
+					description = <"">
+				>
+				["at0339"] = <
+					text = <"NX = Ikke undersøkt">
+					description = <"">
+				>
+				["at0340"] = <
+					text = <"N0 = Ingen regionale lymfeknutemetastaser">
+					description = <"">
+				>
+				["at0341"] = <
+					text = <"N1 = Regionale lymfeknutemetastaser">
+					description = <"">
+				>
+				["at0342"] = <
+					text = <"CT">
+					description = <"">
+				>
+				["at0343"] = <
+					text = <"MR">
+					description = <"">
+				>
+				["at0344"] = <
+					text = <"PET">
+					description = <"">
+				>
+				["at0345"] = <
+					text = <"Lymfadenektomi (diagnostisk i forkant av behandling)">
+					description = <"">
+				>
+				["at0346"] = <
+					text = <"Annet">
+					description = <"">
+				>
+				["at0347"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0348"] = <
+					text = <"Ikke undersøkt">
+					description = <"">
+				>
+				["at0349"] = <
+					text = <"M0 = Ingen fjernmetastaser">
+					description = <"">
+				>
+				["at0350"] = <
+					text = <"M1 = Fjernmetastaser">
+					description = <"">
+				>
+			>
+		>
+	>
