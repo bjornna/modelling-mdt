@@ -1,0 +1,306 @@
+archetype (adl_version=1.4; uid=ac48e1d8-e076-3059-a7d1-fb6b1de6dd22)
+	openEHR-EHR-EVALUATION.damico_risikoklassifisering_prostata_kreft_dips.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Martine Louise Nalum">
+				["organisation"] = <"DIPS AS">
+				["email"] = <"mana@dips.no">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2020-07-07">
+		["name"] = <"Therese Lindberg">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"therese.lindberg@cambio.se">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Skåringen vurderer 5 års risiko for behandlingssvikt basert på kliniske faktorer.">
+			keywords = <"D'Amico","Risiko","Klassifisering","Prostatakreft","PSA","Gleason skår">
+			copyright = <"*@CambioCDS(en)">
+			use = <"D'Amico ble utviklet i 1998 og estimerer risikoen for tilbakefall av prostatakreft (lav, middels eller høy) fra PSA-nivå, Gleason-skår og tumorstadium. Den kan imidlertid være mindre nøyaktig hos menn med flere risikofaktorer. 
+
+Lav risiko: 
+Gleason skår < 6 og
+PSA < 10 ug/L og
+Klinisk stadium T1c eller T2a
+
+Middels risiko: 
+Gleason skår 7 eller
+PSA 10-20 ug/L eller
+Klinisk stadium T2b
+
+Høy risiko: 
+Gleason skår > 8 eller
+PSA > 20 ug/L eller
+Klinisk stadium T2c eller T3">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Assesses 5 year risk of treatment failure based on clinical factors.">
+			keywords = <"d'amico","risk","classification","prostate cancer","PSA","gleason score">
+			copyright = <"@CambioCDS">
+			use = <"Developed in 1998, estimates risk of prostate cancer recurrence (low, medium or high) from PSA level, Gleason Score, and tumor stage. May be less accurate in men with multiple risk factors.
+
+Low risk: 
+Gleason Score < 6 and
+PSA < 10 ng/ml and
+Clinical stage T1c or T2a
+
+Intermediate risk: 
+Gleason Score of 7 or
+PSA of 10-20 ng/ml
+Clinical stage T2b
+
+High risk: 
+Gleason Score > 8 or
+PSA > 20 ng/ml or
+Clinical stage T2c or T3 ">
+		>
+	>
+	other_details = <
+		["references"] = <"1. D'Amico AV, Whittington R, Malkowicz S, et al. Biochemical Outcome After Radical Prostatectomy, External Beam Radiation Therapy, or Interstitial Radiation Therapy for Clinically Localized Prostate Cancer. JAMA.1998;280(11):969-974. doi:10.1001/jama.280.11.969.">
+		["current_contact"] = <"Therese Lindberg, Cambio CDS<therese.lindberg@cambio.se>">
+		["MD5-CAM-1.0.1"] = <"9CB9A26AF14F09745C632DCB23FD28DD">
+		["build_uid"] = <"6e7d1748-89ce-37e5-9f39-eacabe99c166">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- D'amico risk classification prostate cancer
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- PSA level
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0010,    -- <10ng/mL
+									at0011,    -- 10-20 ng/mL
+									at0012]    -- >20 ng/mL
+								}
+							}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Gleason Score
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0015,    -- ≤6
+									at0016,    -- 7
+									at0017]    -- ≥8
+								}
+							}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Clinical stage
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0023,    -- T1-T2a
+									at0024,    -- T2b
+									at0025]    -- ≥T2c
+								}
+							}
+						}
+					}
+					ELEMENT[at0018] occurrences matches {0..1} matches {    -- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0019] occurrences matches {0..1} matches {    -- D'Amico Risk
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0020,    -- Low risk
+									at0021,    -- Intermediate risk
+									at0022]    -- High risk
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"D'amico risk classification prostate cancer">
+					description = <"D'Amico Risk Classification for Prostate Cancer assesses 5 year risk of treatment failure based on clinical factors.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0009"] = <
+					text = <"PSA level">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"<10ng/mL">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"10-20 ng/mL">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <">20 ng/mL">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Gleason Score">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Clinical stage">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"≤6">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"7">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"≥8">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Comment">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"D'Amico Risk">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Low risk">
+					description = <"Gleason Score < 6 and PSA < 10 ng/ml and Clinical stage T1c or T2a">
+				>
+				["at0021"] = <
+					text = <"Intermediate risk">
+					description = <"Gleason Score of 7 or PSA of 10-20 ng/ml, Clinical stage T2b">
+				>
+				["at0022"] = <
+					text = <"High risk">
+					description = <"Gleason Score > 8 or PSA > 20 ng/ml or Clinical stage T2c or T3">
+				>
+				["at0023"] = <
+					text = <"T1-T2a">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"T2b">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"≥T2c">
+					description = <"*">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"D'Amico risikoklassifisering prostatakreft">
+					description = <"D'Amico risikoklassifisering for prostatakreft vurderer 5 års risiko for behandlingssvikt basert på kliniske faktorer. ">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"*@ internal @(en)">
+				>
+				["at0009"] = <
+					text = <"PSA nivå">
+					description = <"Nivå av prostataspesifikt antigen">
+				>
+				["at0010"] = <
+					text = <"<10 ug/L">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"10-20 ug/L">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <">20 ug/L">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Gleason skår">
+					description = <"Brukes til å evaluere prognosen for menn med prostatakreft ved hjelp av prøver fra prostatabiopsi">
+				>
+				["at0014"] = <
+					text = <"Klinisk stadium">
+					description = <"Klinisk stadium (TNM)">
+				>
+				["at0015"] = <
+					text = <"≤6">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"7">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"≥8">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Kommentar">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"D'Amico risiko">
+					description = <"Risikoklassifisering for prostatakreft">
+				>
+				["at0020"] = <
+					text = <"Lav risiko">
+					description = <"Gleason skår <6 og PSA <10 ug/L og klinisk stadium T1c eller T2a">
+				>
+				["at0021"] = <
+					text = <"Middels risiko">
+					description = <"Gleason skår 7 eller PSA 10-20 ug/L eller klinisk stadium T2b">
+				>
+				["at0022"] = <
+					text = <"Høy risiko">
+					description = <"Gleason skår >8 eller PSA >20 ug/L eller klinisk stadium T2c eller T3">
+				>
+				["at0023"] = <
+					text = <"T1-T2a">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"T2b">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"≥T2c">
+					description = <"">
+				>
+			>
+		>
+	>
