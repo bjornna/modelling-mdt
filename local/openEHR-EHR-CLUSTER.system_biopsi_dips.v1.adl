@@ -1,0 +1,106 @@
+archetype (adl_version=1.4; uid=d4bb25eb-bfcb-3be9-9fe0-f2e7a683d120)
+	openEHR-EHR-CLUSTER.system_biopsi_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"D52A19252667EBB4D34A884C99FCAA1E">
+		["build_uid"] = <"51ccb428-8d68-3e62-9c74-fa331491c885">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- System biopsi dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Antall positive kjerner
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0013] occurrences matches {0..1} matches {    -- Antall negative kjerner
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Høyeste ISUP
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0004,    -- ISUP Grade Group 1
+							at0005,    -- ISUP Grade Group 2
+							at0006,    -- ISUP Grade Group 3
+							at0007,    -- ISUP Grade Group 4
+							at0008]    -- ISUP Grade Group 5
+						}
+					}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {    -- Høyeste %≥G4
+				value matches {
+					DV_PROPORTION matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"System biopsi dips">
+					description = <"unknown">
+				>
+				["at0003"] = <
+					text = <"Høyeste ISUP">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"ISUP Grade Group 1">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"ISUP Grade Group 2">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"ISUP Grade Group 3">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"ISUP Grade Group 4">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"ISUP Grade Group 5">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Høyeste %≥G4">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Antall positive kjerner">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Antall negative kjerner">
+					description = <"*">
+				>
+			>
+		>
+	>
