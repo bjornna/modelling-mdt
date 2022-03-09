@@ -1,0 +1,50 @@
+archetype (adl_version=1.4; uid=d3fb8965-f4cd-3892-b932-72e4e8d2c1cb)
+	openEHR-EHR-CLUSTER.ingen_kjente_relevante_problemstillinger_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"D24D67F291D287DAB04A401E9C3B558A">
+		["build_uid"] = <"9735d0a5-83f9-3713-8fb1-e03cfc17673f">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Ingen kjente relevante problemstillinger dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Tidligere frisk
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ingen kjente relevante problemstillinger dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tidligere frisk">
+					description = <"*">
+				>
+			>
+		>
+	>
