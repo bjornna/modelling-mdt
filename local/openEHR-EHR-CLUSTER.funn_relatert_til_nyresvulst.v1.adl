@@ -1,0 +1,121 @@
+archetype (adl_version=1.4; uid=afa125c3-5f86-3325-92be-a2586d585a38)
+	openEHR-EHR-CLUSTER.funn_relatert_til_nyresvulst.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"C7B46E11BAB13F16F182F15B1736DDA5">
+		["build_uid"] = <"cfaed4f2-6f11-33d1-a5d5-6880ac222b13">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Funn relatert til nyresvulst
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Største diameter
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::122]>
+						list = <
+							["1"] = <
+								units = <"mm">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Karakteristikk
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0005,    -- Solid
+							at0006]    -- Cystisk
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {    -- Bosniak classification
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Vekst rate per år
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::122]>
+						list = <
+							["1"] = <
+								units = <"mm">
+							>
+						>
+					>
+				}
+			}
+			allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {    -- RENAL Nephrometry Score
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0013] occurrences matches {0..1} matches {    -- Antall svulster
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Funn relatert til nyresvulst">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Største diameter">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Vekst rate per år">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Karakteristikk">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Solid">
+					description = <"Solid">
+				>
+				["at0006"] = <
+					text = <"Cystisk">
+					description = <"Cystisk">
+				>
+				["at0011"] = <
+					text = <"Bosniak classification">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"RENAL Nephrometry Score">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Antall svulster">
+					description = <"*">
+				>
+			>
+		>
+	>
