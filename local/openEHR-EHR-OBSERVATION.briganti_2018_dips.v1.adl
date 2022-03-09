@@ -1,0 +1,176 @@
+archetype (adl_version=1.4; uid=2f7d4d5f-ebaa-35de-be1b-ac7138b06a7c)
+	openEHR-EHR-OBSERVATION.briganti_2018_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"FFC82CC6E7582587EF6EDA13FF7F1C5A">
+		["build_uid"] = <"f1d87c12-2e10-3f9f-9a66-0cf339eabf32">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Briganti 2018 dips
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- PSA-nivå før biopsi
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"ug/L">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Klinisk stadium ved MR
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0010,    -- Organbegrenset sykdom
+													at0011,    -- Ekstrakapsulær utvidelse
+													at0012]    -- Seminal invasjon
+												}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Maksimal lesjonsdiameter ved MR
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::122]>
+												list = <
+													["1"] = <
+														units = <"mm">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Gleason Grade Group
+										value matches {
+											1|[local::at0013],
+											2|[local::at0014],
+											3|[local::at0015],
+											4|[local::at0016],
+											5|[local::at0017]
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Prosentancel kjerner med klinisk signifikant PCa
+										value matches {
+											DV_PROPORTION matches {*}
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Kalkulert risiko for lymfeknutemetastaser
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Briganti 2018 dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"PSA-nivå før biopsi">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Prosentancel kjerner med klinisk signifikant PCa">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Klinisk stadium ved MR">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Maksimal lesjonsdiameter ved MR">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Gleason Grade Group">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Organbegrenset sykdom">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ekstrakapsulær utvidelse">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Seminal invasjon">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Gleason Grade Group 1">
+					description = <"Gleason skår mindre eller lik 6.">
+				>
+				["at0014"] = <
+					text = <"Gleason Grade Group 2">
+					description = <"Gleason skår 7 (3 + 4).">
+				>
+				["at0015"] = <
+					text = <"Gleason Grade Group 3">
+					description = <"Gleason skår 7 (4 + 3)">
+				>
+				["at0016"] = <
+					text = <"Gleason Grade Group 4">
+					description = <"Gleason skår 8.">
+				>
+				["at0017"] = <
+					text = <"Gleason Grade Group 5">
+					description = <"Gleason skår 9-10.">
+				>
+				["at0018"] = <
+					text = <"Kalkulert risiko for lymfeknutemetastaser">
+					description = <"*">
+				>
+			>
+		>
+	>
