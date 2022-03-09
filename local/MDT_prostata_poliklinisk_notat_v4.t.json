@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "a3218f53813e87be10e826732c7e930a",
+      "MD5-CAM-1.0.1" : "0342296b49361f680d7010d385521155",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -734,9 +734,9 @@
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "value",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_STRING",
+                  "rmTypeName" : "STRING",
                   "constraint" : [ "Ja", "Nei", "Ukjent" ]
                 } ]
               } ],
@@ -1185,7 +1185,7 @@
             "code" : "at0001.1",
             "text" : "Var kreftsymptomer (smerter, anemi eller annet) en del av årsaken til utredningen?",
             "description" : "Navnet på det rapporterte symptomet eller sykdomstegnet.",
-            "comment" : "Navnet på symptom/sykdomstegn bør kodes med en terminologi om mulig."
+            "comment" : "Her bør det legges inn navnet på symptomet og ikke ja/nei/ukjent. "
           }
         },
         "fi" : {
@@ -1491,9 +1491,9 @@
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "value",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_STRING",
+                  "rmTypeName" : "STRING",
                   "constraint" : [ "Ja", "Nei", "Ukjent" ]
                 } ]
               } ],
@@ -1942,7 +1942,7 @@
             "code" : "at0001.1",
             "text" : "Var vannlatingsproblemer en del av årsaken til utredningen?",
             "description" : "Navnet på det rapporterte symptomet eller sykdomstegnet.",
-            "comment" : "Navnet på symptom/sykdomstegn bør kodes med en terminologi om mulig."
+            "comment" : "Her bør det legges inn navnet på symptomet og ikke ja/nei/ukjent. "
           }
         },
         "fi" : {
