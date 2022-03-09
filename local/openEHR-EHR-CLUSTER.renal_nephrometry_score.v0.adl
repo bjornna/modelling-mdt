@@ -30,7 +30,8 @@ description
 		["original_publisher"] = <"openEHR Foundation">
 		["MD5-CAM-1.0.1"] = <"81b11012961593ed088dc19b4e7df525">
 		["build_uid"] = <"faf6312e-7bb4-36a9-b847-8986f7ae1fef">
-		["references"] = <"MedCalc: https://www.mdcalc.com/renal-nephrometry-score ">
+		["references"] = <"MedCalc: https://www.mdcalc.com/renal-nephrometry-score 
+Radiopedia: https://radiopaedia.org/articles/renal-nephrometry-scoring-system-2">
 	>
 
 definition
