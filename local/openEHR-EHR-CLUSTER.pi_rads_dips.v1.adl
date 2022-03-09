@@ -1,0 +1,93 @@
+archetype (adl_version=1.4; uid=401faa45-5c15-33e0-bae1-82de335aaaba)
+	openEHR-EHR-CLUSTER.pi_rads_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"798EF90DE02F05BCE52E91D855B206A2">
+		["build_uid"] = <"74220757-f50e-338f-8473-1136450a1b91">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Pi rads dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- PI-RADS
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0003,    -- 1
+							at0004,    -- 2
+							at0005,    -- 3
+							at0006,    -- 4
+							at0007,    -- 5
+							at0009]    -- Ukjent
+						}
+					}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Kommentar
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pi rads dips">
+					description = <"PI-RADS (Prostate Imaging-Reporting and Data System) brukes av radiologer for å evaluere hvor sannsynlig det er at et mistenkelig område er klinisk signifikant kreft. PI-RADS rangeres fra 1 (mest sannsynlig ikke kreft) til 5 (svært mistenkelig). ">
+				>
+				["at0001"] = <
+					text = <"PI-RADS">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Kommentar">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"1">
+					description = <"Svært lav (klinisk signifikant kreft er svært usannsynlig å være tilstede)">
+				>
+				["at0004"] = <
+					text = <"2">
+					description = <"Lav (klinisk signifikant kreft er usannsynlig å være tilstede)">
+				>
+				["at0005"] = <
+					text = <"3">
+					description = <"Middels (tilstedeværelsen av klinisk signifikant kreft er tvetydig)">
+				>
+				["at0006"] = <
+					text = <"4">
+					description = <"Høy (klinisk signifikant kreft er sannsynligvis tilstede)">
+				>
+				["at0007"] = <
+					text = <"5">
+					description = <"Svært høy (klinisk signifikant kreft er høyst sannsynlig tilstede)">
+				>
+				["at0009"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+			>
+		>
+	>
