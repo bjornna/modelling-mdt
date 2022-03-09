@@ -1,0 +1,50 @@
+archetype (adl_version=1.4; uid=1e98f270-b9ac-338d-b461-27471bd3e930)
+	openEHR-EHR-CLUSTER.funn_relatert_til_ct_abdomen_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"F5997898D14E7562B839A36B1F59F3AC">
+		["build_uid"] = <"e6b76ab4-1260-39b9-90eb-cc58ac7f079b">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Funn relatert til ct abdomen
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Antall svulster
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Funn relatert til ct abdomen">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Antall svulster">
+					description = <"*">
+				>
+			>
+		>
+	>
