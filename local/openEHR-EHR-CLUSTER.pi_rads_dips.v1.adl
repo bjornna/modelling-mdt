@@ -9,16 +9,21 @@ language
 
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"bna@dips.no">
+		["date"] = <"2022-03-02">
 	>
 	lifecycle_state = <"0">
+	other_contributors = <"Martine Louise Nalum <mana@dips.no>", ...>
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
+			purpose = <"Utviklet for å støtte arbeidsprosessen inn mot MDT møte for prostata i et samarbeidsprosjekt med Helse Nord ">
 		>
 	>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"798EF90DE02F05BCE52E91D855B206A2">
+		["MD5-CAM-1.0.1"] = <"1672b162cbccb049091a3d7067ffadb3">
 		["build_uid"] = <"74220757-f50e-338f-8473-1136450a1b91">
 	>
 
