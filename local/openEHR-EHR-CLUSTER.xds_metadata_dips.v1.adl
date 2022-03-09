@@ -45,7 +45,7 @@ description
 		["original_namespace"] = <"uk.org.clinicalmodels">
 		["original_publisher"] = <"UK Clinical Models">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"065050002dcafd3fcf90bc911f1724a4">
+		["MD5-CAM-1.0.1"] = <"1bb5d5dda81f792043f1d4d42c30f7ab">
 		["build_uid"] = <"feed3fab-2d92-470b-a6c9-f19499a58c8b">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -207,7 +207,7 @@ Coded text is preferred, normally specific to an XDS Affinity Domain.">
 					description = <"Spesialiteten til forfatteren/komponisten av dokumentet.">
 				>
 				["at0002"] = <
-					text = <"Klasssekode">
+					text = <"Klassekode">
 					description = <"En dokumentklassekode på høyt nivå, vanligvis valgt fra et verdisett levert av IHE-XDS Affinity Domain.">
 					comment = <"For eksempel: Rapport, Sammendrag, Bilder, Plan, Pasientpreferanser, Arbeidsflyt.
 Disse kodene er spesifikke for et XDS Affinity Domain.">
