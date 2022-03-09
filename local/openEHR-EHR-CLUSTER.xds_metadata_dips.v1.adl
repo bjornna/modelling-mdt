@@ -10,6 +10,9 @@ language
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			author = <
+				["name"] = <"Bjørn Næss">
+				["email"] = <"bna@dips.no">
+				["organisation"] = <"DIPS ASA">
 			>
 		>
 	>
@@ -21,7 +24,7 @@ description
 		["organisation"] = <"Better, Slovenia">
 		["email"] = <"borut.fabjan@better.care">
 	>
-	lifecycle_state = <"in_development">
+	lifecycle_state = <"release_candidate">
 	other_contributors = <"Boštjan Lah, Better, Slovenia","Ian McNicoll, freshEHR Clinical Informatics, UK">
 	details = <
 		["nb"] = <
@@ -45,7 +48,7 @@ description
 		["original_namespace"] = <"uk.org.clinicalmodels">
 		["original_publisher"] = <"UK Clinical Models">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"1bb5d5dda81f792043f1d4d42c30f7ab">
+		["MD5-CAM-1.0.1"] = <"38ea621ca21a04bacf466327c647fe71">
 		["build_uid"] = <"feed3fab-2d92-470b-a6c9-f19499a58c8b">
 		["revision"] = <"0.0.1-alpha">
 	>
