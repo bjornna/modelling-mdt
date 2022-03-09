@@ -1,0 +1,166 @@
+archetype (adl_version=1.4; uid=02a8959a-9d17-36c1-943c-c15d70a0e313)
+	openEHR-EHR-CLUSTER.template_semver_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2019-07-02">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"bna@dips.no">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Definerer semantiske egenskaper ved templaten. ">
+			copyright = <"DIPS AS">
+			use = <"Benyttes for å angi en semantisk versjonering av templaten. ">
+			misuse = <"Skal ikke benyttes for noen form for klinisk innhold.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Defining some metadata variable to be added to a composition. The main purpose is to be able to query for data cross-composition.">
+			copyright = <"DIPS AS">
+			use = <"Define data which is not related to the clinical content, but only to be used for application or system specific metadata.">
+			misuse = <"*Do not enter clinical data in this archetype.(nb)">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"DA38D7FDB467BD8746408BF41D8C608D">
+		["build_uid"] = <"e3962933-26b5-3094-82dd-06a00a506308">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Composition metadata
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Name
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0003] occurrences matches {0..1} matches {    -- Semver
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Major
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|>=0|}
+							}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Minor
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|>=0|}
+							}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Patch
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|>=0|}
+							}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {    -- Other details
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0008] occurrences matches {0..*} matches {    -- Keyword
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Composition metadata">
+					description = <"Definining composition metadata">
+				>
+				["at0001"] = <
+					text = <"Name">
+					description = <"The name/title of the composition. Used to group information. ">
+				>
+				["at0003"] = <
+					text = <"Semver">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Major">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Minor">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Patch">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Other details">
+					description = <"Other details which is needed for this kind of metadata">
+				>
+				["at0008"] = <
+					text = <"Keyword">
+					description = <"Keywords or tags used to define the content of the data. May be coded in some terminology.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Template versjonsinformasjon">
+					description = <"Informasjon om templatens semantiske versjonering">
+				>
+				["at0001"] = <
+					text = <"Navn">
+					description = <"*The name/title of the composition. Used to group information. (nb)">
+				>
+				["at0003"] = <
+					text = <"Semver">
+					description = <"Semantisk versjonering av templaten. ">
+				>
+				["at0004"] = <
+					text = <"Major">
+					description = <"Markerer brytende endringer i templaten">
+				>
+				["at0005"] = <
+					text = <"Minor">
+					description = <"Markerer endret funksjonalitet som er lagt til på en bakoverkompatibel måte ">
+				>
+				["at0006"] = <
+					text = <"Patch">
+					description = <"Små endringer i form av feilrettinger, endringer av skrivefeil, etc. ">
+				>
+				["at0007"] = <
+					text = <"Andre detaljer">
+					description = <"Andre detaljer som kan legges til for spesifikke templater. ">
+				>
+				["at0008"] = <
+					text = <"Nøkkelord">
+					description = <"Andre nøkkelord som kan beskrive innholdet i templaten. ">
+				>
+			>
+		>
+	>
