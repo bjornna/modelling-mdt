@@ -1,0 +1,76 @@
+archetype (adl_version=1.4; uid=810ade14-3f18-3101-9e13-f5647388a408)
+	openEHR-EHR-CLUSTER.mdt_prostate_prostatevolume_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"00CE605D3C5D131DB1F64C2BE2A5A45A">
+		["build_uid"] = <"c486dd8b-a113-31bf-aab9-df3a1ab784c4">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Mdt prostate prostatevolume dips v1
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Protatavolum
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::129]>
+						list = <
+							["1"] = <
+								units = <"cc">
+							>
+							["2"] = <
+								units = <"ml">
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Prostatatetthet
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::126]>
+						list = <
+							["1"] = <
+								units = <"ug/L/cm3">
+							>
+						>
+					>
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mdt prostate prostatevolume dips v1">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Protatavolum">
+					description = <"Volum i prostata. ">
+				>
+				["at0003"] = <
+					text = <"Prostatatetthet">
+					description = <"*">
+				>
+			>
+		>
+	>
