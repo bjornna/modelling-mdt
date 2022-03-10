@@ -1,0 +1,426 @@
+archetype (adl_version=1.4; uid=aef21241-2675-499e-a57d-d83c6c10f944)
+	openEHR-EHR-OBSERVATION.charlson_commorbidity_index_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"f85db009b4aa1788f27864c962a0f4d5">
+		["build_uid"] = <"26a29a7c-9e76-3254-ab4f-7416df1f9bb1">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- charlson_commorbidity_index_dips
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0061] occurrences matches {0..1} matches {    -- Alder
+										value matches {
+											0|[local::at0062],
+											1|[local::at0063],
+											2|[local::at0064],
+											3|[local::at0065],
+											4|[local::at0066]
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Myokardinfarkt
+										value matches {
+											0|[local::at0013],
+											1|[local::at0014]
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Kronisk hjertesvikt
+										value matches {
+											0|[local::at0010],
+											1|[local::at0011]
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Perifere vaskulære sykdommer
+										value matches {
+											0|[local::at0007],
+											1|[local::at0008]
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Cerebrovasklær hendelse eller transitorisk iskemisk anfall
+										value matches {
+											0|[local::at0016],
+											1|[local::at0017]
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Demens
+										value matches {
+											0|[local::at0019],
+											1|[local::at0020]
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Kronisk obstruktiv lungesykdom
+										value matches {
+											0|[local::at0022],
+											1|[local::at0023]
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Magesårsykdom
+										value matches {
+											0|[local::at0025],
+											1|[local::at0026]
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Leversykdom
+										value matches {
+											0|[local::at0028],
+											1|[local::at0029],
+											3|[local::at0067]
+										}
+									}
+									ELEMENT[at0030] occurrences matches {0..1} matches {    -- Bindevevssykdom
+										value matches {
+											0|[local::at0031],
+											1|[local::at0032]
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Diabetes
+										value matches {
+											0|[local::at0034],
+											1|[local::at0035],
+											2|[local::at0068]
+										}
+									}
+									ELEMENT[at0036] occurrences matches {0..1} matches {    -- Hemiplegi
+										value matches {
+											0|[local::at0037],
+											2|[local::at0038]
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Moderat til alvorlig nyresykdom
+										value matches {
+											0|[local::at0040],
+											2|[local::at0041]
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Lokalisert solid svulst
+										value matches {
+											0|[local::at0046],
+											2|[local::at0048],
+											6|[local::at0069]
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {    -- Leukemi
+										value matches {
+											0|[local::at0049],
+											2|[local::at0051]
+										}
+									}
+									ELEMENT[at0050] occurrences matches {0..1} matches {    -- Lymfom
+										value matches {
+											0|[local::at0052],
+											2|[local::at0053]
+										}
+									}
+									ELEMENT[at0060] occurrences matches {0..1} matches {    -- Aids
+										value matches {
+											0|[local::at0070],
+											6|[local::at0071]
+										}
+									}
+									ELEMENT[at0072] occurrences matches {0..1} matches {    -- CCI totalscore
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0073] occurrences matches {0..1} matches {    -- Estimert10 års overlevelse
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::380]>
+												list = <
+													["1"] = <
+														units = <"%">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"charlson_commorbidity_index_dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Perifere vaskulære sykdommer">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Kronisk hjertesvikt">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Myokardinfarkt">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Cerebrovasklær hendelse eller transitorisk iskemisk anfall">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Demens">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Kronisk obstruktiv lungesykdom">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Magesårsykdom">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Leversykdom">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Ingen">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Mild">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Bindevevssykdom">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Diabetes">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Ingen eller diet kontrollert">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Ukompliser">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Hemiplegi">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Moderat til alvorlig nyresykdom">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Lokalisert solid svulst">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Ingen">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Leukemi">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Lokalisert">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Lymfom">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Aids">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Alder">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"< 50 år">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"50-59 år">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"60-69 år">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"70-79 år">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"≥80 år">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Moderat til alvorlig">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Organskade">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Metastatisk">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"CCI totalscore">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Estimert10 års overlevelse">
+					description = <"*">
+				>
+			>
+		>
+	>
