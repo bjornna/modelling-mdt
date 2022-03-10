@@ -31,12 +31,12 @@ Radiopedia: https://radiopaedia.org/articles/renal-nephrometry-scoring-system-2"
 		["original_namespace"] = <"org.openehr">
 		["custodian_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
-		["MD5-CAM-1.0.1"] = <"0a0dea4620e53a108d233338756b9504">
+		["MD5-CAM-1.0.1"] = <"05fa0e76a21a6e35e664b47f603be3cd">
 		["build_uid"] = <"faf6312e-7bb4-36a9-b847-8986f7ae1fef">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- renal_nephrometry_score_dips
+	CLUSTER[at0000] matches {    -- RENAL Nephrometry Score
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Radius (cm)
 				value matches {
@@ -128,7 +128,7 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"renal_nephrometry_score_dips">
+					text = <"RENAL Nephrometry Score">
 					description = <"RENAL Nephrometry Score">
 				>
 				["at0002"] = <
