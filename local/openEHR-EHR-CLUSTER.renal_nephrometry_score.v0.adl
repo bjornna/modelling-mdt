@@ -25,13 +25,13 @@ description
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"MedCalc: https://www.mdcalc.com/renal-nephrometry-score 
+Radiopedia: https://radiopaedia.org/articles/renal-nephrometry-scoring-system-2">
 		["original_namespace"] = <"org.openehr">
 		["custodian_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
-		["MD5-CAM-1.0.1"] = <"81b11012961593ed088dc19b4e7df525">
+		["MD5-CAM-1.0.1"] = <"423e4cebf692f22253ca0f477a0c4cc7">
 		["build_uid"] = <"faf6312e-7bb4-36a9-b847-8986f7ae1fef">
-		["references"] = <"MedCalc: https://www.mdcalc.com/renal-nephrometry-score 
-Radiopedia: https://radiopaedia.org/articles/renal-nephrometry-scoring-system-2">
 	>
 
 definition
@@ -58,7 +58,7 @@ definition
 					3|[local::at0013]
 				}
 			}
-			ELEMENT[at0015] occurrences matches {0..1} matches {    -- Aneterior/posterior
+			ELEMENT[at0015] occurrences matches {0..1} matches {    -- Anterior/posterior
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -164,7 +164,7 @@ ontology
 				>
 				["at0010"] = <
 					text = <"Nærhet til oppsammlingssystem eller sinus (mm)">
-					description = <"Measure shortest distance
+					description = <"Mål kortest avstand.
 ">
 				>
 				["at0011"] = <
@@ -180,8 +180,8 @@ ontology
 					description = <"*">
 				>
 				["at0015"] = <
-					text = <"Aneterior/posterior">
-					description = <"*">
+					text = <"Anterior/posterior">
+					description = <"">
 				>
 				["at0016"] = <
 					text = <"Anterior">
