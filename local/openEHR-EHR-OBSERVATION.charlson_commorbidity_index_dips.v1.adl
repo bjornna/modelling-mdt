@@ -15,15 +15,17 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
+			purpose = <"Forutsier 10 års overlevelse hos pasienter med flere komorbiditeter.">
+			use = <"Arketypen har suffix dips fordi den tas i bruk før den sendes til høring. ">
 		>
 	>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"f85db009b4aa1788f27864c962a0f4d5">
+		["MD5-CAM-1.0.1"] = <"4ae5dbb723093e238dda0d5d99b94758">
 		["build_uid"] = <"26a29a7c-9e76-3254-ab4f-7416df1f9bb1">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- charlson_commorbidity_index_dips
+	OBSERVATION[at0000] matches {    -- Charlson commorbidity index
 		data matches {
 			HISTORY[at0001] matches {    -- Event Series
 				events cardinality matches {1..*; unordered} matches {
@@ -170,8 +172,8 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"charlson_commorbidity_index_dips">
-					description = <"unknown">
+					text = <"Charlson commorbidity index">
+					description = <"Forutsier 10 års overlevelse hos pasienter med flere komorbiditeter.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
