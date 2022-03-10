@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "0342296b49361f680d7010d385521155",
+      "MD5-CAM-1.0.1" : "ce5931381ce615bfa5ddc9e7fab2eb25",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -724,29 +724,6 @@
         "children" : [ {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
-          "nodeId" : "at0001.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "value",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_STRING",
-                  "rmTypeName" : "STRING",
-                  "constraint" : [ "Ja", "Nei", "Ukjent" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ELEMENT",
           "occurrences" : "0..0",
           "nodeId" : "at0035.1",
           "attributes" : [ {
@@ -1134,13 +1111,6 @@
             "code" : "at0000.1",
             "text" : "Kreftsymptomer",
             "description" : "*Reported observation of a physical or mental disturbance in an individual.(en)"
-          },
-          "at0001.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001.1",
-            "text" : "Var kreftsymptomer (smerter, anemi eller annet) en del av årsaken til utredningen?",
-            "description" : "*The name of the reported symptom or sign.(en)",
-            "comment" : "*Symptom name should be coded with a terminology, where possible.(en)"
           }
         },
         "en" : {
@@ -1149,13 +1119,6 @@
             "code" : "at0000.1",
             "text" : "Kreftsymptomer",
             "description" : "Reported observation of a physical or mental disturbance in an individual."
-          },
-          "at0001.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001.1",
-            "text" : "Var kreftsymptomer (smerter, anemi eller annet) en del av årsaken til utredningen?",
-            "description" : "The name of the reported symptom or sign.",
-            "comment" : "Symptom name should be coded with a terminology, where possible."
           }
         },
         "de" : {
@@ -1164,13 +1127,6 @@
             "code" : "at0000.1",
             "text" : "Kreftsymptomer",
             "description" : "Festgestellte Beobachtung einer körperlichen oder geistigen Störung bei einer Person."
-          },
-          "at0001.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001.1",
-            "text" : "Var kreftsymptomer (smerter, anemi eller annet) en del av årsaken til utredningen?",
-            "description" : "Der Name des berichteten Symptoms/Krankheitsanzeichens.",
-            "comment" : "Der Name des Symptoms sollte, wenn möglich, mit einer Terminologie kodiert werden."
           }
         },
         "nb" : {
@@ -1180,12 +1136,12 @@
             "text" : "Kreftsymptomer",
             "description" : "Rapportert observasjon av fysiske tegn eller beskrivelse av unormale eller ubehagelige fornemmelser i kropp og/eller sinn."
           },
-          "at0001.1" : {
+          "at0002.1" : {
             "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001.1",
+            "code" : "at0002.1",
             "text" : "Var kreftsymptomer (smerter, anemi eller annet) en del av årsaken til utredningen?",
-            "description" : "Navnet på det rapporterte symptomet eller sykdomstegnet.",
-            "comment" : "Her bør det legges inn navnet på symptomet og ikke ja/nei/ukjent. "
+            "description" : "Fritekstbeskrivelse av det rapporterte symptomet eller sykdomstegnet.",
+            "comment" : "Eksempel: \"Svimmelhet med rotasjonsfølelse og av og til besvimelsesfølelse. Hurtig bevegelse fra sittende eller liggende til stående stilling virker å være en utløsende faktor. Opptrer typisk flere ganger daglig, og varer i ca et halvt til ett minutt hver gang. Å sette eller legge seg ned virker lindrende.\""
           }
         },
         "fi" : {
@@ -1194,13 +1150,6 @@
             "code" : "at0000.1",
             "text" : "Kreftsymptomer",
             "description" : "Reported observation of a physical or mental disturbance in an individual.(en)"
-          },
-          "at0001.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001.1",
-            "text" : "Var kreftsymptomer (smerter, anemi eller annet) en del av årsaken til utredningen?",
-            "description" : "The name of the reported symptom or sign.(en)",
-            "comment" : "*Symptom name should be coded with a terminology, where possible.(en)"
           }
         },
         "sv" : {
@@ -1209,13 +1158,6 @@
             "code" : "at0000.1",
             "text" : "Kreftsymptomer",
             "description" : "Rapporterad observation av en fysisk eller psykisk störning hos en individ."
-          },
-          "at0001.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001.1",
-            "text" : "Var kreftsymptomer (smerter, anemi eller annet) en del av årsaken til utredningen?",
-            "description" : "Namnet på det uppvisade symtomet eller tecknet.",
-            "comment" : "Symtomnamnet ska kodas med en terminologi, där det är möjligt."
           }
         },
         "pt-br" : {
@@ -1224,19 +1166,11 @@
             "code" : "at0000.1",
             "text" : "Kreftsymptomer",
             "description" : "Observação de um distúrbio físico ou mental relatada em um indivíduo."
-          },
-          "at0001.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001.1",
-            "text" : "Var kreftsymptomer (smerter, anemi eller annet) en del av årsaken til utredningen?",
-            "description" : "O nome do sintoma ou sinal relatado.",
-            "comment" : "Nome do sintoma deve ser codificado com uma terminologia, se possível."
           }
         }
       },
       "termBindings" : {
         "SNOMED-CT" : {
-          "at0001.1" : "term:SNOMED-CT::418799008",
           "at0028.1" : "term:SNOMED-CT::162442009",
           "at0021.1" : "term:SNOMED-CT::162465004",
           "at0002.1" : "term:SNOMED-CT::162408000"
