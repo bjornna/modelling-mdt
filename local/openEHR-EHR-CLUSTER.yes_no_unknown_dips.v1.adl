@@ -1,0 +1,80 @@
+archetype (adl_version=1.4; uid=9c9ade90-a15a-4f32-8200-b33d1c886a1a)
+	openEHR-EHR-CLUSTER.yes_no_unknown_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2022-02-18">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"bna@dips.no">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Arketypen er utviklet for å være et svaralternativ til den godkjente arketypen \"helserisiko\". 
+Her er alternativene \"tilstede\", \"uviss\", \"fraværende\". I mange spørreskjema relatert til helserisiko benyttes alternativene \"Ja\", \"Nei\" og \"Ukjent\". Sluttbruker ønsker å få presentert disse alternativene. Arketypen er utviklet for å dekke en presentasjon av disse alternativene og det bør være en skjemalogikk som oversetter konseptene">
+			use = <"Benyttes i screening/spørreskjema registreringer som har andre svaralternativ som sin primærform. ">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["build_uid"] = <"77eb8826-d940-3fb5-b529-281e92c9e490">
+		["MD5-CAM-1.0.1"] = <"5d8ed6d0411910233bc30c3499b7cfae">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Ja/Nei/Ukjent
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Spørsmål
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0002,    -- Ja
+							at0003,    -- Nei
+							at0004]    -- Ukjent
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ja/Nei/Ukjent">
+					description = <"Arketypen er utviklet for å være et svaralternativ til den godkjente arketypen \"helserisiko\". ">
+				>
+				["at0001"] = <
+					text = <"Spørsmål">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+			>
+		>
+	>
