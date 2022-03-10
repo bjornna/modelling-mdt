@@ -19,7 +19,8 @@ description
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
-			purpose = <"Developed to support the prototype of a MDT Kidney application at Oslo University Hospital. ">
+			purpose = <"Developed to support the prototype of a MDT Kidney application at Oslo University Hospital. 
+Arketypen har suffix DIPS fordi den tas i bruk før eventuell godkjenning av arketypen. ">
 		>
 	>
 	other_details = <
