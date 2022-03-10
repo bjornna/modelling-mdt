@@ -9,7 +9,10 @@ language
 
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Morten Hørthe">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"mho@dips.no">
+		["date"] = <"2022-01-17">
 	>
 	lifecycle_state = <"0">
 	details = <
@@ -18,7 +21,7 @@ description
 		>
 	>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"C7B46E11BAB13F16F182F15B1736DDA5">
+		["MD5-CAM-1.0.1"] = <"829d6d3d5611a5fbf6ed69d7f45c16a3">
 		["build_uid"] = <"cfaed4f2-6f11-33d1-a5d5-6880ac222b13">
 	>
 
