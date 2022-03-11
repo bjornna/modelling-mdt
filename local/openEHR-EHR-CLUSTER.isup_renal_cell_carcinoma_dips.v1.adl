@@ -9,12 +9,19 @@ language
 
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS ASA">
+		["email"] = <"bna@dips.no">
+		["date"] = <"2022-03-11">
 	>
 	lifecycle_state = <"0">
+	other_contributors = <"Martine Louise Nalum <mana@dips.no>","Runar Kristiansen <rkr@dips.no>">
 	details = <
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
+			purpose = <"Used for staging, classification and grading of renal cell neoplasia">
+			use = <"Used for staging, classification and grading of renal cell neoplasia">
+			misuse = <"Not to be used for prostate cancer or any other cancer.">
 		>
 	>
 	other_details = <
