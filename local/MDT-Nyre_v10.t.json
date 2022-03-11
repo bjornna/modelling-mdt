@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "d287cb2093cccae810a4af8043b4ef10",
+      "MD5-CAM-1.0.1" : "309a68a86e65979b221db355e1ce7920",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5",
       "original_language" : "ISO_639-1::nb"
     },
@@ -408,17 +408,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "SNOMED-CT"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "SNOMED-CT" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "SNOMED-CT",
                     "code" : "6401000179105",
@@ -13812,16 +13814,7 @@
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
               "nodeId" : "at0111.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_BOOLEAN",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
@@ -30988,7 +30981,22 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4ae5dbb723093e238dda0d5d99b94758"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Forutsier 10 års overlevelse hos pasienter med flere komorbiditeter.",
+          "keywords" : [ ],
+          "use" : "Arketypen har suffix dips fordi den tas i bruk før den sendes til høring. ",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.charlson_commorbidity_index_dips.v1",
     "differential" : true,
@@ -31039,7 +31047,40 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "DA38D7FDB467BD8746408BF41D8C608D"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Definerer semantiske egenskaper ved templaten. ",
+          "keywords" : [ ],
+          "use" : "Benyttes for å angi en semantisk versjonering av templaten. ",
+          "misuse" : "Skal ikke benyttes for noen form for klinisk innhold.",
+          "copyright" : "DIPS AS",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "Defining some metadata variable to be added to a composition. The main purpose is to be able to query for data cross-composition.",
+          "keywords" : [ ],
+          "use" : "Define data which is not related to the clinical content, but only to be used for application or system specific metadata.",
+          "misuse" : "*Do not enter clinical data in this archetype.(nb)",
+          "copyright" : "DIPS AS",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.template_semver_dips.v1",
     "differential" : true,
@@ -31220,7 +31261,23 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "9979f951622627cbda4f628fe15a1b56"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Used for staging, classification and grading of renal cell neoplasia",
+          "keywords" : [ ],
+          "use" : "Used for staging, classification and grading of renal cell neoplasia",
+          "misuse" : "Not to be used for prostate cancer or any other cancer.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.isup_renal_cell_carcinoma_dips.v1",
     "differential" : true,
@@ -31271,7 +31328,23 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "9979f951622627cbda4f628fe15a1b56"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Used for staging, classification and grading of renal cell neoplasia",
+          "keywords" : [ ],
+          "use" : "Used for staging, classification and grading of renal cell neoplasia",
+          "misuse" : "Not to be used for prostate cancer or any other cancer.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.isup_renal_cell_carcinoma_dips.v1",
     "differential" : true,
@@ -31322,7 +31395,23 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "9979f951622627cbda4f628fe15a1b56"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Used for staging, classification and grading of renal cell neoplasia",
+          "keywords" : [ ],
+          "use" : "Used for staging, classification and grading of renal cell neoplasia",
+          "misuse" : "Not to be used for prostate cancer or any other cancer.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.isup_renal_cell_carcinoma_dips.v1",
     "differential" : true,
@@ -31373,7 +31462,23 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "8e393d65a58f914afe8fe5d6f67d93ce"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Brukes for å angi en ressurs som er nødvendig for å utføre helstjenester.",
+          "keywords" : [ "ressurs", "helsetjeneste" ],
+          "use" : "Brukes primært i forbindelse med planlegging av aktiviteter for å kunne angi hva slags type ressurser man trenger. F.eks. når man skal gjennomføre en operasjon.",
+          "misuse" : "Brukes ikke i forbindelse med å registrere hvem som har gjennomført en helsetjeneste. Da brukes other_participations fra referansemodellen.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.healthcare_resource_dips.v1",
     "differential" : true,
