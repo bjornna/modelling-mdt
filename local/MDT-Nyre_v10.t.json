@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "8f8dc9a0cf3e97faaa36499197ff0bfe",
+      "MD5-CAM-1.0.1" : "dbc7a0fbd7cd02dffcbf945aade0e18f",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5",
       "original_language" : "ISO_639-1::nb"
     },
@@ -2587,17 +2587,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "MDTTNMN"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "MDTTNMN" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "MDTTNMN",
                     "code" : "N1",
@@ -2627,17 +2629,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "MDTTNMM"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "MDTTNMM" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "MDTTNMM",
                     "code" : "M1",
@@ -2910,17 +2914,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "MDTRenalCancerStage"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "MDTRenalCancerStage" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "MDTRenalCancerStage",
                     "code" : "G1",
