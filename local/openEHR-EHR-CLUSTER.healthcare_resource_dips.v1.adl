@@ -78,7 +78,7 @@ Tjenester bestilles/rekvireres gjennom openEHR INSTRUCTION arketyper. Eksempel p
     Pasientforløp: openEHR-EHR-INSTRUCTION.trajectory.v1
 
 Om vi ser på disse begrepene fra systemet så vil det være slik at ressurser inngår i en tjeneste. Altså for å utføre en tjeneste kreves et sett med ressurser. Med andre ord kan det være aktuelt å legge CLUSTER for ressurser inn i en INSTRUCTION til en tjeneste.">
-		["MD5-CAM-1.0.1"] = <"B8478152A65B2FE5B68C417E9CF55366">
+		["MD5-CAM-1.0.1"] = <"8e393d65a58f914afe8fe5d6f67d93ce">
 		["build_uid"] = <"3daf9de0-1821-3b03-b997-7c96585c07b8">
 	>
 
