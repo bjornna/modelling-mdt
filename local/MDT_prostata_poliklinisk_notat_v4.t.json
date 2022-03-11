@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "6af5b6b83375af2a5d052bae42b7eddf",
+      "MD5-CAM-1.0.1" : "f90aea0b329d9be4952611fb72c6102d",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -1163,13 +1163,6 @@
             "code" : "at0000.1",
             "text" : "Kreftsymptomer",
             "description" : "Rapportert observasjon av fysiske tegn eller beskrivelse av unormale eller ubehagelige fornemmelser i kropp og/eller sinn."
-          },
-          "at0001" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001",
-            "text" : "Navn på symptom/sykdomstegn",
-            "description" : "Navnet på det rapporterte symptomet eller sykdomstegnet.",
-            "comment" : "Beksrivelse av "
           },
           "at0002.1" : {
             "@type" : "ARCHETYPE_TERM",
@@ -6096,17 +6089,19 @@
                 "children" : [ {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
+                  "occurrences" : "1..1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
                     "children" : [ {
                       "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
                       "terminologyId" : {
                         "value" : "SNOMED-CT"
                       },
                       "constraint" : [ ],
+                      "selectedTerminologies" : [ "SNOMED-CT" ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "SNOMED-CT",
                         "code" : "50043002",
@@ -16592,7 +16587,22 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "5d8ed6d0411910233bc30c3499b7cfae"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Arketypen er utviklet for å være et svaralternativ til den godkjente arketypen \"helserisiko\". \nHer er alternativene \"tilstede\", \"uviss\", \"fraværende\". I mange spørreskjema relatert til helserisiko benyttes alternativene \"Ja\", \"Nei\" og \"Ukjent\". Sluttbruker ønsker å få presentert disse alternativene. Arketypen er utviklet for å dekke en presentasjon av disse alternativene og det bør være en skjemalogikk som oversetter konseptene",
+          "keywords" : [ ],
+          "use" : "Benyttes i screening/spørreskjema registreringer som har andre svaralternativ som sin primærform. ",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.yes_no_unknown_dips.v1",
     "differential" : true,
