@@ -6,6 +6,13 @@ concept
 
 language
 	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+	>
 
 description
 	original_author = <
@@ -16,9 +23,13 @@ description
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"1D98B907AFF8535A888320A691278409">
+		["MD5-CAM-1.0.1"] = <"920b538ce7c908357b267781c4bc4087">
 		["build_uid"] = <"26a29a7c-9e76-3254-ab4f-7416df1f9bb1">
 	>
 
@@ -171,7 +182,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Charlson commorbidity index">
-					description = <"unknown">
+					description = <"The Charlson Comorbidity Index (CCI) (Charlson et al., 1987) quantifies an individual’s burden of disease and corresponding 1-year mortality risk.">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -419,6 +430,262 @@ ontology
 				>
 				["at0073"] = <
 					text = <"Estimert10 års overlevelse">
+					description = <"*">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Charlson commorbidity index (nb)">
+					description = <"*The Charlson Comorbidity Index (CCI) (Charlson et al., 1987) quantifies an individual’s burden of disease and corresponding 1-year mortality risk. (nb)">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"*Any event (nb)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"*Perifere vaskulære sykdommer (nb)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*Kronisk hjertesvikt (nb)">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Myokardinfarkt (nb)">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"*Cerebrovasklær hendelse eller transitorisk iskemisk anfall (nb)">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Demens (nb)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Kronisk obstruktiv lungesykdom (nb)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"*Magesårsykdom (nb)">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"*Leversykdom (nb)">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"*Ingen (nb)">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"*Mild (nb)">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"*Bindevevssykdom (nb)">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"*Diabetes (nb)">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"*Ingen eller diet kontrollert (nb)">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"*Ukompliser (nb)">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"*Hemiplegi (nb)">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"*Moderat til alvorlig nyresykdom (nb)">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"*Lokalisert solid svulst (nb)">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"*Ingen (nb)">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"*Leukemi (nb)">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"*Lokalisert (nb)">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"*Lymfom (nb)">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"*Aids (nb)">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"*Alder (nb)">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"*< 50 år (nb)">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"*50-59 år (nb)">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"*60-69 år (nb)">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"*70-79 år (nb)">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"*≥80 år (nb)">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"*Moderat til alvorlig (nb)">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"*Organskade (nb)">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"*Metastatisk (nb)">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"*Nei (nb)">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"*Ja (nb)">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"*CCI totalscore (nb)">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"*Estimert10 års overlevelse (nb)">
 					description = <"*">
 				>
 			>
