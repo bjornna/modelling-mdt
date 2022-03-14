@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "eb3a0a6129f5be3c3c11777f9e5d990e",
+      "MD5-CAM-1.0.1" : "f1855d869db7cf9064feec97ddf157b8",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5",
       "original_language" : "ISO_639-1::nb"
     },
@@ -698,7 +698,7 @@
                       "selectedTerminologies" : [ "SNOMED-CT" ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "SNOMED-CT",
-                        "code" : "128462008",
+                        "code" : "314996003",
                         "value" : "Metastase"
                       } ]
                     } ]
@@ -746,6 +746,14 @@
                         "terminologyId" : "SNOMED-CT",
                         "code" : "54444007",
                         "value" : "Høyre nyrebekken"
+                      }, {
+                        "terminologyId" : "SNOMED-CT",
+                        "code" : "64033007",
+                        "value" : "Nyre"
+                      }, {
+                        "terminologyId" : "SNOMED-CT",
+                        "code" : "25990002",
+                        "value" : "Nyrebekken"
                       } ]
                     } ]
                   } ],
@@ -951,6 +959,13 @@
             "text" : "Metastase",
             "description" : "Detaljer om én identifisert helsetilstand, skade, funksjonshemming eller annet forhold som påvirker et individs fysiske, mentale og/eller sosiale velvære.\r\n",
             "comment" : "Det er i praksis ikke lett å oppnå et klart skille mellom et problem og en diagnose. I klinisk dokumentasjon med denne arketypen ses problem og diagnose som et kontinuum, med økende krav til detaljer og støttende evidens for å underbygge en diagnose."
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Problem/diagnosenavn",
+            "description" : "Identifisering av problemet eller diagnosen ved hjelp av navn.",
+            "comment" : "Benytter SCT koden for metastase fra nyre"
           }
         },
         "sv" : {
@@ -30431,17 +30446,19 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "DV_CODED_TEXT",
-                      "occurrences" : "0..1",
+                      "occurrences" : "1..1",
                       "attributes" : [ {
                         "@type" : "C_ATTRIBUTE",
                         "rmAttributeName" : "defining_code",
-                        "existence" : "0..1",
                         "children" : [ {
                           "@type" : "C_TERMINOLOGY_CODE",
+                          "rmTypeName" : "TERMINOLOGY_CODE",
+                          "occurrences" : "0..1",
                           "terminologyId" : {
                             "value" : "MDTTreatmentsConclusion"
                           },
                           "constraint" : [ ],
+                          "selectedTerminologies" : [ "MDTTreatmentsConclusion" ],
                           "includedExternalTerminologyCodes" : [ {
                             "terminologyId" : "MDTTreatmentsConclusion",
                             "code" : "TreatC1",
