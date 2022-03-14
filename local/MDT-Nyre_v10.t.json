@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "a3bc215f4ca971ba3b8fc4584940ec0a",
+      "MD5-CAM-1.0.1" : "2c33fa2d352ddd1f41b564edf78076c0",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5",
       "original_language" : "ISO_639-1::nb"
     },
@@ -27030,17 +27030,19 @@
                 "children" : [ {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
+                  "occurrences" : "1..1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
                     "children" : [ {
                       "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
                       "terminologyId" : {
                         "value" : "MDTTreatments"
                       },
                       "constraint" : [ ],
+                      "selectedTerminologies" : [ "MDTTreatments" ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "MDTTreatments",
                         "code" : "Treat14",
