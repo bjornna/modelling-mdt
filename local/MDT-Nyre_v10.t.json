@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "309a68a86e65979b221db355e1ce7920",
+      "MD5-CAM-1.0.1" : "7895f8dc027d2102a6b2000771e330ab",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5",
       "original_language" : "ISO_639-1::nb"
     },
@@ -1715,17 +1715,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "MDTTNMEdition"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "MDTTNMEdition" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "MDTTNMEdition",
                     "code" : "Edition1",
@@ -11006,17 +11008,19 @@
                 "children" : [ {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
+                  "occurrences" : "1..1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
                     "children" : [ {
                       "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
                       "terminologyId" : {
                         "value" : "MDTRenalPrecautions"
                       },
                       "constraint" : [ ],
+                      "selectedTerminologies" : [ "MDTRenalPrecautions" ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "MDTRenalPrecautions",
                         "code" : "Pre1",
@@ -12110,17 +12114,19 @@
                 "children" : [ {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
+                  "occurrences" : "1..1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
                     "children" : [ {
                       "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
                       "terminologyId" : {
                         "value" : "SNOMED-CT"
                       },
                       "constraint" : [ ],
+                      "selectedTerminologies" : [ "SNOMED-CT" ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "SNOMED-CT",
                         "code" : "19829001",
@@ -12430,17 +12436,19 @@
                 "children" : [ {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
+                  "occurrences" : "1..1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
                     "children" : [ {
                       "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
                       "terminologyId" : {
                         "value" : "SNOMED-CT"
                       },
                       "constraint" : [ ],
+                      "selectedTerminologies" : [ "SNOMED-CT" ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "SNOMED-CT",
                         "code" : "73211009",
