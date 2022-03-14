@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "121df0cb925214d7ab9146eeebf25ef7",
+      "MD5-CAM-1.0.1" : "216096c00e171cea97904e667d06b360",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -963,53 +963,87 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "SNOMED-CT"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "SNOMED-CT" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "369833007",
-                    "value" : "T1a - Histologisk påvist kreft ≤ 5% av transuretralt reseceret prostatavev"
+                    "code" : "67101007",
+                    "value" : "TX"
                   }, {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "369834001",
-                    "value" : "T1b - Histologisk påvist kreft > 5% av transuretralt reseceret prostatavev"
+                    "code" : "23351008",
+                    "value" : "T1"
                   }, {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "369835000",
-                    "value" : "T1c - Histologisk kreft påvist ved nålebiopsi"
+                    "code" : "261646003",
+                    "value" : "T1a"
                   }, {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "384984004",
-                    "value" : "T2a - Tumor involverer halvdelen eller mindre av den ene prostatahalvdelen"
+                    "code" : "261649005",
+                    "value" : "T1b"
                   }, {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "384985003",
-                    "value" : "T2b - Tumor involverer mer enn en prostatahalvdel"
+                    "code" : "261650005",
+                    "value" : "T1c"
                   }, {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "384986002",
-                    "value" : "T2c - Tumor involverer begge halvdeler av prostata"
+                    "code" : "67673008",
+                    "value" : "T2"
                   }, {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "369838003",
-                    "value" : "T3a - Ekstraprostatisk vekst"
+                    "code" : "261651009",
+                    "value" : "T2a"
                   }, {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "369839006",
-                    "value" : "T3b - Innvekst i vesikler"
+                    "code" : "261652002",
+                    "value" : "T2b"
                   }, {
                     "terminologyId" : "SNOMED-CT",
-                    "code" : "384990000",
-                    "value" : "T4 - Innvekst i omkringliggende vev"
+                    "code" : "261653007",
+                    "value" : "T2c"
+                  }, {
+                    "terminologyId" : "SNOMED-CT",
+                    "code" : "14410001",
+                    "value" : "T3"
+                  }, {
+                    "terminologyId" : "SNOMED-CT",
+                    "code" : "261654001",
+                    "value" : "T3a"
+                  }, {
+                    "terminologyId" : "SNOMED-CT",
+                    "code" : "261655000",
+                    "value" : "T3b"
+                  }, {
+                    "terminologyId" : "SNOMED-CT",
+                    "code" : "261658003",
+                    "value" : "T3c"
+                  }, {
+                    "terminologyId" : "SNOMED-CT",
+                    "code" : "65565005",
+                    "value" : "T4"
+                  }, {
+                    "terminologyId" : "SNOMED-CT",
+                    "code" : "261659006",
+                    "value" : "T4a"
+                  }, {
+                    "terminologyId" : "SNOMED-CT",
+                    "code" : "261660001",
+                    "value" : "T4b"
+                  }, {
+                    "terminologyId" : "SNOMED-CT",
+                    "code" : "261661002",
+                    "value" : "T4c"
                   } ]
                 } ]
               } ],
@@ -1027,17 +1061,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "SNOMED-CT"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "SNOMED-CT" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "SNOMED-CT",
                     "code" : "79420006",
@@ -1067,17 +1103,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "SNOMED-CT"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "SNOMED-CT" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "SNOMED-CT",
                     "code" : "30893008",
@@ -1521,17 +1559,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "SNOMED-CT"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "SNOMED-CT" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "SNOMED-CT",
                     "code" : "113091000",
@@ -1727,17 +1767,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "SNOMED-CT"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "SNOMED-CT" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "SNOMED-CT",
                     "code" : "113091000",
