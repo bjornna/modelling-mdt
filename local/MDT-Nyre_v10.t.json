@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "ac8f3861efcf9dea1b81b75b4ea6da83",
+      "MD5-CAM-1.0.1" : "6bbfafa940a3c9719d25d29a1500e25e",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5",
       "original_language" : "ISO_639-1::nb"
     },
@@ -7423,24 +7423,24 @@
                       "rmTypeName" : "TERMINOLOGY_CODE",
                       "occurrences" : "0..1",
                       "terminologyId" : {
-                        "value" : "local_terms"
+                        "value" : "MDTRenalFailureGrade"
                       },
                       "constraint" : [ ],
-                      "selectedTerminologies" : [ "local_terms" ],
+                      "selectedTerminologies" : [ "MDTRenalFailureGrade" ],
                       "includedExternalTerminologyCodes" : [ {
-                        "terminologyId" : "local_terms",
+                        "terminologyId" : "MDTRenalFailureGrade",
                         "code" : "RFG1",
                         "value" : "Grad 1"
                       }, {
-                        "terminologyId" : "local_terms",
+                        "terminologyId" : "MDTRenalFailureGrade",
                         "code" : "RFG2",
                         "value" : "Grad 2"
                       }, {
-                        "terminologyId" : "local_terms",
+                        "terminologyId" : "MDTRenalFailureGrade",
                         "code" : "RFG3",
                         "value" : "Grad 3"
                       }, {
-                        "terminologyId" : "local_terms",
+                        "terminologyId" : "MDTRenalFailureGrade",
                         "code" : "RFG4",
                         "value" : "Grad 4"
                       } ]
