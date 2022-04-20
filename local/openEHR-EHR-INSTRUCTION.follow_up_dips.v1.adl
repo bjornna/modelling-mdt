@@ -1,0 +1,148 @@
+archetype (adl_version=1.4; uid=75c86acd-37a1-433a-a174-3a40bfd554ab)
+	openEHR-EHR-INSTRUCTION.follow_up_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2021-09-03">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"bna@dips.no">
+	>
+	lifecycle_state = <"NotSet">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"???">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["custodian_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["MD5-CAM-1.0.1"] = <"017420023BE6285AACCA61B1AD37ED78">
+		["build_uid"] = <"1088a7b5-d11c-37b6-8d94-6ba389a01006">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {    -- Videre oppfølging
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] occurrences matches {0..*} matches {    -- Tiltak
+				description matches {
+					ITEM_TREE[at0002] matches {    -- Tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0003] occurrences matches {0..1} matches {    -- Tiltak
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0004] occurrences matches {0..1} matches {    -- Sted
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0005] occurrences matches {0..1} matches {    -- Søkt
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0006] occurrences matches {0..1} matches {    -- Senest
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {    -- Avtalt
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {    -- Bestilt
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0009] occurrences matches {0..1} matches {    -- Merknad
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0011] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Sist oppdatert
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Videre oppfølging">
+					description = <"follow_up">
+				>
+				["at0001"] = <
+					text = <"Tiltak">
+					description = <"Et tiltak til videre oppfølging">
+				>
+				["at0002"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tiltak">
+					description = <"Tiltak - kodes med kodeverk">
+				>
+				["at0004"] = <
+					text = <"Sted">
+					description = <"Helseforetak hvor tiltaket skal utføres. ">
+				>
+				["at0005"] = <
+					text = <"Søkt">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Senest">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Avtalt">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Bestilt">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Merknad">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Sist oppdatert">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>
