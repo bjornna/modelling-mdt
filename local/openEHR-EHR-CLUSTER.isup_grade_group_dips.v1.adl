@@ -1,0 +1,86 @@
+archetype (adl_version=1.4; uid=e8a95f02-c5c8-3552-9904-07e0533f4ea3)
+	openEHR-EHR-CLUSTER.isup_grade_group_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"1F54B7094BCC06BAC7372388688BA277">
+		["build_uid"] = <"aa1e7066-dad6-3d3b-832d-ab82ea1a64c6">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- ISUP Grade Group DIPS
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- ISUP Grade Group
+				value matches {
+					1|[local::at0002],
+					2|[local::at0003],
+					3|[local::at0004],
+					4|[local::at0005],
+					5|[local::at0006]
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- %≥G4
+				value matches {
+					DV_PROPORTION matches {
+						numerator matches {|0.0..100.0|}
+						type matches {2}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"ISUP Grade Group DIPS">
+					description = <"ISUP Grade Group er en metode for kategorisering av prostatacancer, hentet fra International Society of Urological Pathology (ISUP). De ulike graderingene definerer prognostiske kategorier. Graderingen med det laveste tallet indikerer en god prognostisk tumor, mens høyere tall indikerer dårligere prognose.">
+				>
+				["at0001"] = <
+					text = <"ISUP Grade Group">
+					description = <"ISUP Grade Group graderes fra 1 til 5. De ulike graderingene tilsvarer forskjellige verdier i Gleason-skåringen.">
+				>
+				["at0002"] = <
+					text = <"ISUP Grade Group 1">
+					description = <"ISUP Grade Group 1. Tilsvarer Gleason skår ≤6.">
+				>
+				["at0003"] = <
+					text = <"ISUP Grade Group 2">
+					description = <"ISUP Grade Group 2. Tilsvarer Gleason skår 7 (3 + 4).">
+				>
+				["at0004"] = <
+					text = <"ISUP Grade Group 3">
+					description = <"ISUP Grade Group 3. Tilsvarer Gleason skår 7 (4 + 3).">
+				>
+				["at0005"] = <
+					text = <"ISUP Grade Group 4">
+					description = <"ISUP Grade Group 4. Tilsvarer Gleason skår 8.">
+				>
+				["at0006"] = <
+					text = <"ISUP Grade Group 5">
+					description = <"ISUP Grade Group 5. Tilsvarer Gleason skår 9-10.">
+				>
+				["at0007"] = <
+					text = <"%≥G4">
+					description = <"Antall kjerner med ISUP Gradering ≥ 4.">
+				>
+			>
+		>
+	>
