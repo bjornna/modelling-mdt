@@ -6,7 +6,7 @@
     "originalAuthor" : { },
     "otherContributors" : [ ],
     "lifecycleState" : {
-      "codeString" : "Initial"
+      "codeString" : "rejected"
     },
     "ipAcknowledgements" : { },
     "references" : { },
@@ -251,7 +251,7 @@
     "valueSets" : { }
   },
   "adlVersion" : "1.4",
-  "buildUid" : "f7dc9bde-d493-38c4-b931-2a5e82b46220",
+  "buildUid" : "bc0ad09c-344c-3bac-a0d3-ebbfd3d84e36",
   "rmName" : "openehr",
   "rmRelease" : "1.1.0",
   "generated" : true,
