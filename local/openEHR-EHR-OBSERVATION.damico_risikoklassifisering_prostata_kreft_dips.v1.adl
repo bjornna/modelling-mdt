@@ -1,0 +1,203 @@
+archetype (adl_version=1.4; uid=bd5e1c80-865b-33f2-bc8f-935ce3430282)
+	openEHR-EHR-OBSERVATION.damico_risikoklassifisering_prostata_kreft_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Skåringen vurderer 5 års risiko for behandlingssvikt basert på kliniske faktorer.">
+			use = <"D'Amico ble utviklet i 1998 og estimerer risikoen for tilbakefall av prostatakreft (lav, middels eller høy) fra PSA-nivå, ISUP Grade Group og tumorstadium. Den kan imidlertid være mindre nøyaktig hos menn med flere risikofaktorer. 
+
+Lav risiko: 
+ISUP Grade Group 1 og
+PSA < 10 ug/L og
+Klinisk stadium T1c eller T2a
+
+Middels risiko: 
+ISUP Grade Group 2 eller 3, eller
+PSA 10-20 ug/L eller
+Klinisk stadium T2b
+
+Høy risiko: 
+ISUP Grade Group 4 eller 5, eller
+PSA > 20 ug/L eller
+Klinisk stadium T2c eller T3">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"FFEA6F4D72CBE5A272BF7125B915F427">
+		["build_uid"] = <"7274d7f2-968c-33c3-9a42-64b72ec12bf0">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- D Amico risikoklassifisering prostatakreft
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- PSA-nivå
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0021,    -- <10 ug/L
+													at0022,    -- 10-20 ug/L
+													at0023]    -- >20 ug/L
+												}
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- ISUP Grade Group
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0018,    -- ISUP 1
+													at0019,    -- ISUP 2 eller 3
+													at0020]    -- ISUP 4 eller 5
+												}
+											}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Klinisk stadium
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0015,    -- T1-T2a
+													at0016,    -- T2b
+													at0017]    -- ≥T2c
+												}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Risikoklassifisering
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0012,    -- Lav risiko
+													at0013,    -- Middels risiko
+													at0014]    -- Høy risiko
+												}
+											}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Kommentar
+										value matches {
+											DV_CODED_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"D Amico risikoklassifisering prostatakreft">
+					description = <"D'Amico risikoklassifisering for prostatakreft vurderer 5 års risiko for behandlingssvikt basert på kliniske faktorer. ">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"PSA-nivå">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"ISUP Grade Group">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Klinisk stadium">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Kommentar">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Risikoklassifisering">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Lav risiko">
+					description = <"Gleason skår <6 og PSA <10 ug/L og klinisk stadium T1c eller T2a">
+				>
+				["at0013"] = <
+					text = <"Middels risiko">
+					description = <"Gleason skår 7 eller PSA 10-20 ug/L eller klinisk stadium T2b">
+				>
+				["at0014"] = <
+					text = <"Høy risiko">
+					description = <"Gleason skår >8 eller PSA >20 ug/L eller klinisk stadium T2c eller T3">
+				>
+				["at0015"] = <
+					text = <"T1-T2a">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"T2b">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"≥T2c">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"ISUP 1">
+					description = <"Tilsvarer Gleason skår ≤6.">
+				>
+				["at0019"] = <
+					text = <"ISUP 2 eller 3">
+					description = <"Tilsvarer Gleason skår 7 (3 + 4) eller 7 (4 + 3).">
+				>
+				["at0020"] = <
+					text = <"ISUP 4 eller 5">
+					description = <"Tilsvarer Gleason skår 8 eller 9-10.">
+				>
+				["at0021"] = <
+					text = <"<10 ug/L">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"10-20 ug/L">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <">20 ug/L">
+					description = <"*">
+				>
+			>
+		>
+	>
