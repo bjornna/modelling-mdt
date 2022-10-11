@@ -3,10 +3,15 @@
   "uid" : "60347c0c-0b3d-4609-91c5-8247059415a8",
   "description" : {
     "@type" : "RESOURCE_DESCRIPTION",
-    "originalAuthor" : { },
+    "originalAuthor" : {
+      "name" : "Bjørn Næss",
+      "organisation" : "DIPS AS",
+      "email" : "bna@dips.no",
+      "date" : "2022-10-11"
+    },
     "otherContributors" : [ ],
     "lifecycleState" : {
-      "codeString" : "Initial"
+      "codeString" : "in_development"
     },
     "ipAcknowledgements" : { },
     "references" : { },
@@ -50,6 +55,9 @@
           },
           "codeString" : "nb"
         },
+        "purpose" : "Collect summary data of a cancer trajectory ",
+        "keywords" : [ "cancer" ],
+        "copyright" : "DIPS AS",
         "originalResourceUri" : { },
         "otherDetails" : {
           "notes" : "Generated automatically by Adl Designer"
@@ -164,7 +172,7 @@
     "valueSets" : { }
   },
   "adlVersion" : "1.4",
-  "buildUid" : "4b1e71cb-2fe3-35f3-8666-9fc795a15b34",
+  "buildUid" : "0bd8985b-8e72-33ed-a5ae-4918ce5b5931",
   "rmName" : "openehr",
   "rmRelease" : "1.1.0",
   "generated" : true,
