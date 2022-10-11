@@ -1,0 +1,76 @@
+archetype (adl_version=1.4; uid=cda22307-b9ce-3fed-9cef-78981283c005)
+	openEHR-EHR-CLUSTER.clinical_trial_details.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2019-06-24">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"bna@dips.no">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Angir detaljer om klinisk studie.">
+			keywords = <"klinisk studie", ...>
+			use = <"Benyttes som kontekstinformasjon på Compositions for å angi detaljer om det kliniske studie oppføringen inngår i, og om pasienten er inkludert i studien. ">
+			misuse = <"Benyttes kun for å angi en pasient eller pasientforløps inkludering i kliniske studier eller inklusjon til spesifikke registre. Benyttes ikke for å klassifisere primære tilstander som pasienten behandles for. ">
+		>
+	>
+	other_details = <
+		["references"] = <"Arketypen ble først utviklet for bruk i PROTEHCT studien i 2019. Teksten er senere oppdatert slik at arketypen også kan benyttes for andre kliniske studier og også enkelte kvalitetsregistre. ">
+		["MD5-CAM-1.0.1"] = <"A4AE7EB444E2C122B53265B505D8F91D">
+		["build_uid"] = <"becea92e-d365-3ee8-bf83-7ab4a590f7e4">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Detaljer om klinisk studie
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Studie
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Inkludert i studien?
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Kommentar
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Detaljer om klinisk studie">
+					description = <"Benyttes for å angi detaljer om et klinisk studie.">
+				>
+				["at0001"] = <
+					text = <"Studie">
+					description = <"Navnet på den aktuelle studien. Benytt gjerne kodet verdi i template. ">
+				>
+				["at0002"] = <
+					text = <"Inkludert i studien?">
+					description = <"Angir om pasienten er tatt med i studien. Merk at dette ikke er det samme som samtykke erklæringen. ">
+				>
+				["at0005"] = <
+					text = <"Kommentar">
+					description = <"Kommentar til deltakelse og inklusjon i studien. ">
+				>
+			>
+		>
+	>
