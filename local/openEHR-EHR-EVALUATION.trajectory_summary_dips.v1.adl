@@ -1,0 +1,159 @@
+archetype (adl_version=1.4; uid=375df1e2-678f-4981-8f08-70994f9da1e5)
+	openEHR-EHR-EVALUATION.trajectory_summary_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2021-09-03">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"bna@dips.no">
+	>
+	lifecycle_state = <"NotSet">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Utviklet for å støtte oppfølging av pasient i et forløp for eksempel et sykdomsforløp. ">
+			use = <"Utviklet for å støtte oppfølging av pasient i et forløp for eksempel et sykdomsforløp. ">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["custodian_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["MD5-CAM-1.0.1"] = <"AA60C8A05825C8AF430EE04FA3C2B909">
+		["build_uid"] = <"9eecd8a1-cce0-3d4c-8e78-08b7a4ef5c9b">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Administrasjon av forløp
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Resymê
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Praktisk informasjon
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..*} matches {    -- Fagspesifikt sammendrag
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Status
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Pasientansvarlig lege
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0007] occurrences matches {0..*} matches {    -- Stikkord
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0008] occurrences matches {0..1} matches {    -- Dato
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0009] occurrences matches {0..1} matches {    -- Ansvarlig
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0010] occurrences matches {0..1} matches {    -- Stikkord
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0005] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Sist endret
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Administrasjon av forløp">
+					description = <"trajectory summary">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Resymê">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Praktisk informasjon">
+					description = <"Praktisk informasjon om forløpet. Ofte viktig informasjon som krever oppfølging. ">
+				>
+				["at0004"] = <
+					text = <"Status">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Sist endret">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Stikkord">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Dato">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Ansvarlig">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Stikkord">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Pasientansvarlig lege">
+					description = <"Angir hvilken lege som har ansvaret for oppfølging av pasienten.">
+				>
+				["at0012"] = <
+					text = <"Fagspesifikt sammendrag">
+					description = <"Sammendrag som er spesifikt for den kliniske fagspesialiteten. For hjerte vil det f.eks. være et kardiologisk sammendrag. ">
+					comment = <"Feltet kan multipliseres for ulike fagspesifikke sammendrag">
+				>
+			>
+		>
+	>
