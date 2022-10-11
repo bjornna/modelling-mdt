@@ -1,0 +1,78 @@
+archetype (adl_version=1.4; uid=4a1ff441-9e78-4805-a9c2-b8ea151d3418)
+	openEHR-EHR-ADMIN_ENTRY.control_instance_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2021-10-26">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"bna@dips.no">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Registreringen med denne arketypen definerer hvilket foretak som følger opp pasienten. Primært for å kunne kontakte og følge opp pasientens behandlere ved behov. ">
+			use = <"Benyttes for spesialiserte enheter som har overordnet ansvar for oppfølging av et faglig ansvar for pasienten, og hvor den regelmessige kontakten følges opp av lokalsykehuset. ">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["build_uid"] = <"88de58da-d1d4-30e1-94af-2f91ccc747b0">
+		["MD5-CAM-1.0.1"] = <"74eb9b563e3ee0d4f65c0eb46daa9bf2">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {    -- Kontrollinstans
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Lokal kontrollinstans
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Sist oppdatert
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Kontrollinstans">
+					description = <"En administrativ oppføring av hvem som har ansvar for oppfølging av pasienten. Benyttes for spesialiserte enheter som har overordnet ansvar for oppfølging av et faglig ansvar for pasienten, og hvor den regelmessige kontakten følges opp av lokalsykehuset. 
+Registreringen med denne arketypen definerer hvilket foretak som følger opp pasienten. Primært for å kunne kontakte og følge opp pasientens behandlere ved behov. ">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Lokal kontrollinstans">
+					description = <"Foretaket som følger opp pasienten lokalt. Vil typisk være lokalsykehuset som representerer spesialisthelsetjenesten der pasienten bor. ">
+				>
+				["at0003"] = <
+					text = <"Sist oppdatert">
+					description = <"Tidspunktet når data sist ble endret. ">
+				>
+			>
+		>
+	>
