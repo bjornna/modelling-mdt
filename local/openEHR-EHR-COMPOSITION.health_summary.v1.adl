@@ -1,0 +1,147 @@
+archetype (adl_version=1.4; uid=b7631088-c8ed-4688-8dab-14308d7b649d)
+	openEHR-EHR-COMPOSITION.health_summary.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"John Tore Valand">
+				["organisation"] = <"Helse Bergen HF">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2015-10-01">
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+	>
+	lifecycle_state = <"published">
+	other_contributors = <"Tomas Alme, DIPS ASA, Norway","Vebjørn Arntzen, Oslo universitetssykehus HF, Norway (Nasjonal IKT redaktør)","Silje Ljosland Bakke, Nasjonal IKT HF, Norway (Nasjonal IKT redaktør)","Sistine Barretto-Daniels, Ocean Informatics, Australia","Lars Bitsch-Larsen, Haukeland University hospital, Norway","Lisbeth Dahlhaug, Helse Midt - Norge IT, Norway","Heather Grain, Llewelyn Grain Informatics, Australia","Mikkel Gaup Grønmo, FSE, Helse Nord, Norway (Nasjonal IKT redaktør)","Hilde Hollås, DIPS ASA, Norway","Roar Holm, Helse Vest IKT A/S, Norway","Lars Karlsen, DIPS ASA, Norway","Lars Morgan Karlsen, DIPS ASA, Norway","Jeanette Krabbedal-Mathisen, Helse Bergen HF, Norway","Heather Leslie, Ocean Informatics, Australia (openEHR Editor)","Siv Marie Lien, DIPS ASA, Norway","Yang Lu, University of Melbourne, Australia","Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)","Andrej Orel, Marand d.o.o., Slovenia","John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere et sammendrag av helseinformasjon om et individ på et spesifisert tidspunkt.">
+			keywords = <"sammendrag","oversikt","synopsis","sammenfatning","status">
+			use = <"Brukes som en generisk konteiner for et sammendrag eller en oversikt over pasientens helse og/eller omsorgsstatus på et spesifikt tidspunkt.
+
+Forfatteren av helsesammendraget er vanligvis en kliniker som er kjent med alle de relevante aspektene om individets helse som sammendraget består av.
+
+Formålet med helsesammendraget kan variere utfra ulike kontekster, eksempler på helsesammendrag kan være en oversikt over alle relevant viktige aspekter knyttet til pasientens helse og/eller omsorg eller et sammendrag av informasjon fokusert på et begrenset område av individets helse.
+
+Mottakere av helsesammendraget vil variere utfra sammendragets primærfokus og kan være:
+- Framtidige helsetjenesteytere.
+- Klinikere som ikke har noe personlig kjennskap til individet, men som må yte helsetjenester, som akuttbehandling eller behandling når individet er på reise.
+som ved diabetes eller gravidiet.
+- Individet selv.
+
+Det er ikke satt begrensinger på hovedkomponenten Section/content. Dette gjør at man kan legge til hvilken som helst SECTION eller ENTRY arketype som er passende for det kliniske formålet i et templat.
+
+Selv om det kliniske innholdet er ubegrenset, gir denne arketypen muligheter for enkle spørringer etter alle sammendrag av helseinformasjon i en journal.">
+			misuse = <"Brukes ikke for å registrere detaljer om en enkelt klinisk konsultasjon, prosedyre, prøve, vurdering eller lignende.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a summary of health information about an individual, representing a subset of their health record at a specified point in time.">
+			keywords = <"summary","synopsis","overview","status">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			use = <"Use as a generic containter to record a summary or overview of a patient's health and/or welfare status as a snapshot of their health at a specified point in time. 
+
+The author of a health summary is usually a clinician who is familiar with the all of the relevant aspects of the individual's health that is the content of the summary.
+
+The scope of a health summary can vary in different contexts, ranging from an overview of all key aspects of the individual's health and/or welfare to a summary of information focused on a limited aspect of the individual's health.
+
+The intended readers of the health summary will vary according to the primary purpose and focus of the summary, and may include:
+- any future healthcare providers;
+- clinicians who have no personal knowledge of the individual but are required to provide healthcare, such as emergency treatment or when the individual is travelling;
+- clinicians managing only specific aspects of the individual's health, such as diabetes or pregnancy; and
+- the individual themselves.
+
+The main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. 
+
+Even though clinical content is unconstrained, this archetype supports simple querying for all Health summaries that might be contained within a health record.">
+			misuse = <"Not to be used to record details about a single clinical consultation, procedure, test or assessment etc.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"Nasjonal IKT">
+		["references"] = <"Avgrenet fra: Health summary, Published archetype [Internet]. openEHR Foundation, openEHR Clinical Knowledge Manager [cited: 2017-04-26]. Available from: http://openehr.org/ckm/#showArchetype_1013.1.1969">
+		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
+		["original_namespace"] = <"no.nasjonalikt">
+		["original_publisher"] = <"Nasjonal IKT">
+		["custodian_namespace"] = <"no.nasjonalikt">
+		["MD5-CAM-1.0.1"] = <"38876F893CA725F42C8E62C6BE90A970">
+		["build_uid"] = <"9f8d01f6-cc26-4e72-b704-c3a8bdc6f32d">
+		["revision"] = <"1.0.1">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Health summary
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {    -- Tree
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {    -- Extension
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Health summary">
+					description = <"Generic document containing a summary of health information about an individual.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sammendrag av helseinformasjon">
+					description = <"Generisk dokument som inneholder sammendrag av helseinformasjon om et individ.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som er nødvendig for å registrere lokalt innhold/kontekst, eller for å sammenstille med andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
+				>
+			>
+		>
+	>
