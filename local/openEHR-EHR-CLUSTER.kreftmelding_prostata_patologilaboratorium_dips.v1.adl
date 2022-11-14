@@ -1,0 +1,213 @@
+archetype (adl_version=1.4; uid=aab20881-309b-3dd5-82f3-ebaf15e552ae)
+	openEHR-EHR-CLUSTER.kreftmelding_prostata_patologilaboratorium_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2020-01-03">
+		["name"] = <"Borisa Barisa ">
+		["organisation"] = <"DIPS AS, Norway ">
+		["email"] = <"boba@dips.no">
+	>
+	lifecycle_state = <"0">
+	other_contributors = <"Morten Pavicevic Hørthe, DIPS AS, Norway ", ...>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Cluster arketype som brukes i forbindelse med kreftmelding for prostata. ">
+			use = <"Brukes som cluster arketype i kreftmelding for prostata. ">
+			misuse = <"Alt annet utover det som er definert under bruk. ">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"59E6EAC3D01E63E19020C7C9B22C191E">
+		["build_uid"] = <"485da3f7-ac65-3c7d-bd1f-9b709fafe133">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Patologilaboratorium
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Laboratorium
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0002,    -- AHUS, Akershus universitetssykehus
+							at0003,    -- Fürst Patologi
+							at0004,    -- Gyn Lab A/S
+							at0005,    -- Gades Institutt, Haukeland universitetssjukehus
+							at0006,    -- Helse Fonna, Haugesund sjukehus
+							at0007,    -- Helse Førde, Førde sjukehus
+							at0008,    -- Helse Møre og Romsdal, Molde sjukehus
+							at0009,    -- Helse Sunnmøre, Ålesund sjukehus
+							at0010,    -- Nordlandssykehuset, Bodø
+							at0011,    -- Oslo universitetssykehus, Aker
+							at0012,    -- Oslo universitetssykehus, Radiumhospitalet
+							at0013,    -- Oslo universitetssykehus, Rikshospitalet
+							at0014,    -- Oslo universitetssykehus, Ullevål
+							at0015,    -- Stavanger universitetssjukehus
+							at0016,    -- St. Olavs Hospital
+							at0017,    -- Sykehuset Innlandet, Lillehammer
+							at0018,    -- Sykehuset i Telemark, Skien
+							at0019,    -- Sykehuset i Vestfold, Tønsberg
+							at0020,    -- Sykehuset Østfold, Kalnes
+							at0021,    -- Sørlandet sykehus, Arendal
+							at0022,    -- Sørlandet sykehus, Kristiansand
+							at0023,    -- UNN, Universitetssykehuset i Nord-Norge
+							at0024,    -- Vestre Viken HF, Sykehuset Buskerud, Drammen
+							at0025,    -- Annet laboratorium
+							at0026]    -- Ukjent
+						}
+					}
+				}
+			}
+			ELEMENT[at0027] occurrences matches {0..1} matches {    -- Ikke relevant
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0028] occurrences matches {0..1} matches {    -- Spesifiser
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0029] occurrences matches {0..1} matches {    -- Preparatnummer
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Patologilaboratorium">
+					description = <"Patologilaboratorium til bruk i kreftmeldingsskjema. ">
+				>
+				["at0001"] = <
+					text = <"Laboratorium">
+					description = <"Liste over laboratorier. ">
+				>
+				["at0002"] = <
+					text = <"AHUS, Akershus universitetssykehus">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Fürst Patologi">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Gyn Lab A/S">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Gades Institutt, Haukeland universitetssjukehus">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Helse Fonna, Haugesund sjukehus">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Helse Førde, Førde sjukehus">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Helse Møre og Romsdal, Molde sjukehus">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Helse Sunnmøre, Ålesund sjukehus">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Nordlandssykehuset, Bodø">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Oslo universitetssykehus, Aker">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Oslo universitetssykehus, Radiumhospitalet">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Oslo universitetssykehus, Rikshospitalet">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Oslo universitetssykehus, Ullevål">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Stavanger universitetssjukehus">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"St. Olavs Hospital">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Sykehuset Innlandet, Lillehammer">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Sykehuset i Telemark, Skien">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Sykehuset i Vestfold, Tønsberg">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Sykehuset Østfold, Kalnes">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Sørlandet sykehus, Arendal">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Sørlandet sykehus, Kristiansand">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"UNN, Universitetssykehuset i Nord-Norge">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Vestre Viken HF, Sykehuset Buskerud, Drammen">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Annet laboratorium">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Ukjent">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Ikke relevant">
+					description = <"Krysses av dersom informasjon om laboratorium ikke er relevant. ">
+				>
+				["at0028"] = <
+					text = <"Spesifiser">
+					description = <"Spesifiserer laboratorium dersom \"annet laboratorium\" er valgt. ">
+				>
+				["at0029"] = <
+					text = <"Preparatnummer">
+					description = <"Preparatnummer. ">
+				>
+			>
+		>
+	>
