@@ -1,0 +1,68 @@
+archetype (adl_version=1.4; uid=789e4bf0-07ba-3f60-8ba3-9f1806ab271f)
+	openEHR-EHR-CLUSTER.kreftmelding_prostata_ctcncm_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"7B394D422378EA7CD299158213C76E71">
+		["build_uid"] = <"cf8de2d3-2e0b-37e8-83e5-3a8bae51496f">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Kreftmelding prostata ctcncm dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- cT
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- cN
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- cM
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Kreftmelding prostata ctcncm dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"cT">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"cN">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"cM">
+					description = <"*">
+				>
+			>
+		>
+	>
