@@ -1,0 +1,129 @@
+archetype (adl_version=1.4; uid=fed3de7b-7978-49a0-95b9-7014609a324c)
+	openEHR-EHR-CLUSTER.procedure_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2021-06-25">
+		["name"] = <"Bjørn Næss">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"bna@dips.no">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Utviklet for å støtte registrering av en del-prosedyre. Det er en aktivitet som inngår i en større helhet. ">
+			keywords = <"prosedyre, intervensjon, kirurgisk, medisinsk, klinisk, terapeutisk, diagnostisk, behandling, kur, evaluering, undersøkelse, screening, palliativ, terapi, prognostisk", ...>
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"106d2c741e1456c3222242bca86ff096">
+		["build_uid"] = <"c323e570-3d67-3583-83dc-6483ae3322af">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Prosedyre
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Prosedyrenavn
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Beskrivelse
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Prosedyretype
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Detaljer om prosedyren
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Prosedyre">
+					description = <"En klinisk aktivitet som er utført i undersøkende, diagnostisk, kurativ, terapeutisk, evaluerende, prognostisk eller palliativ hensikt.
+Benyttes ofte for å definere en prosedyre som inngår i en større og/eller omsluttende proseydre. ">
+				>
+				["at0001"] = <
+					text = <"Prosedyrenavn">
+					description = <"Navnet på prosedyren.">
+					comment = <"Det bør om mulig benyttes terminologi for å angi prosedyrenavnet.">
+				>
+				["at0002"] = <
+					text = <"Beskrivelse">
+					description = <"Fritekstbeskrivelse av prosedyren, tilpasset det aktuelle prosesstrinnet.">
+					comment = <"For eksempel en beskrivelse av utførelsen og funnene fra prosedyren, det avbrutte forsøket, eller avlysningen av prosedyren.">
+				>
+				["at0003"] = <
+					text = <"Prosedyretype">
+					description = <"Typen prosedyre.">
+					comment = <"Dette dataelementet kan brukes til å støtte organisering innenfor brukergrensesnittet.">
+				>
+				["at0004"] = <
+					text = <"Detaljer om prosedyren">
+					description = <"Åpning for utvidelse av spesfiikke detaljer om prosedyren. ">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Procedure">
+					description = <"A clinical activity performed for investigative, diagnostic, curative, therapeutic, evaluative, prognostic or palliative purposes.
+Often used to define a procedure that is part of a larger and/or enclosing procedure.">
+				>
+				["at0001"] = <
+					text = <"Name of procedure">
+					description = <"Name of procedure.">
+					comment = <"*Det bør om mulig benyttes terminologi for å angi prosedyrenavnet. (nb)">
+				>
+				["at0002"] = <
+					text = <"Description">
+					description = <"Free text description of the procedure, adapted to the relevant steps of the process. ">
+					comment = <"*For eksempel en beskrivelse av utførelsen og funnene fra prosedyren, det avbrutte forsøket, eller avlysningen av prosedyren. (nb)">
+				>
+				["at0003"] = <
+					text = <"Type of procedure">
+					description = <"Type of procedure.">
+					comment = <"*Dette dataelementet kan brukes til å støtte organisering innenfor brukergrensesnittet. (nb)">
+				>
+				["at0004"] = <
+					text = <"Procedure details">
+					description = <"Opening slot for details about the procedure.">
+				>
+			>
+		>
+	>
