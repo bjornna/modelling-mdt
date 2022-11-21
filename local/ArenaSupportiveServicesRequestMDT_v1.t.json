@@ -22,7 +22,7 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "20c7c17283aa615da5ad79c562083a7a",
+      "MD5-CAM-1.0.1" : "5f6c6fd54578c49361d86ac2d3b3506e",
       "PARENT:MD5-CAM-1.0.1" : "512CC1E43C2E5B69E73EC9620CFDFC91",
       "original_language" : "ISO_639-1::nb"
     },
@@ -798,7 +798,7 @@
         "children" : [ {
           "@type" : "C_ARCHETYPE_ROOT",
           "rmTypeName" : "INSTRUCTION",
-          "occurrences" : "0..1",
+          "occurrences" : "1..1",
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
@@ -1076,6 +1076,16 @@
           "copyright" : "© openEHR Foundation, Nasjonal IKT HF, Nasjonal IKT HF",
           "originalResourceUri" : { },
           "otherDetails" : { }
+        }
+      }
+    },
+    "annotations" : {
+      "@type" : "RESOURCE_ANNOTATIONS",
+      "documentation" : {
+        "nb" : {
+          "/activities[at0001.1]" : {
+            "HideLabel" : "true"
+          }
         }
       }
     },
