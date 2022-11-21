@@ -1,0 +1,889 @@
+archetype (adl_version=1.4; uid=745f4837-ed89-4ef8-bde0-4e35a66cc994)
+	openEHR-EHR-EVALUATION.mdt_nyre.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2020-11-07">
+		["name"] = <"">
+	>
+	lifecycle_state = <"NotSet">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"???">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["custodian_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["MD5-CAM-1.0.1"] = <"3BB184AC929878A2AE86D74DCB138C07">
+		["build_uid"] = <"35da20c2-4bad-342e-80af-c4c0bea7839e">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Multidisiplinært møte for nyresvulster
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Henvisende instans
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Fastlege
+									at0004,    -- Annet HF
+									at0005]    -- Avtalespesialist
+								}
+							}
+						}
+					}
+					CLUSTER[at0006] occurrences matches {0..1} matches {    -- Kliniske data
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0012] occurrences matches {0..1} matches {    -- Tilfeldig oppdaget
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0013] occurrences matches {0..1} matches {    -- Symptomatisk
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0014] occurrences matches {0..1} matches {    -- Vekt
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::124]>
+										list = <
+											["1"] = <
+												units = <"kg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {    -- Høyde
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::122]>
+										list = <
+											["1"] = <
+												units = <"cm">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0016] occurrences matches {0..1} matches {    -- BMI
+								value matches {
+									DV_QUANTITY matches {*}
+								}
+							}
+							CLUSTER[at0019] occurrences matches {0..1} matches {    -- Nyresvikt
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Nyresvikt
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {*}    -- Kreatinin
+									ELEMENT[at0020] occurrences matches {0..1} matches {    -- eGFR
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::126]>
+												list = <
+													["1"] = <
+														units = <"ml/min">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Grad
+										value matches {
+											1|[local::at0022],
+											2|[local::at0023],
+											3|[local::at0024],
+											4|[local::at0025]
+										}
+									}
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {    -- Singel nyre
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0027,    -- Ja
+											at0028]    -- Nei
+										}
+									}
+								}
+							}
+							ELEMENT[at0029] occurrences matches {0..1} matches {    -- Tidligere operert i aktuell nyre
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0030,    -- Ja
+											at0031]    -- Nei
+										}
+									}
+								}
+							}
+							ELEMENT[at0032] occurrences matches {0..1} matches {    -- Abdominalt operert
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0033,    -- Ja
+											at0034]    -- Nei
+										}
+									}
+								}
+							}
+							ELEMENT[at0035] occurrences matches {0..1} matches {    -- Spesifiser adominal operasjobn
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0036] occurrences matches {0..1} matches {    -- Blodfortynnende
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0037,    -- Ja
+											at0038]    -- Nei
+										}
+									}
+								}
+							}
+							ELEMENT[at0039] occurrences matches {0..3} matches {    -- Medisiner
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0040,    -- ASA
+											at0041,    -- Marevan
+											at0042]    -- DOAK/NOAK
+										}
+									}
+								}
+							}
+							allow_archetype CLUSTER[at0043] occurrences matches {0..*} matches {    -- Charlton commorbitity index CCI
+								include
+									archetype_id/value matches {/.*/}
+							}
+							allow_archetype CLUSTER[at0044] occurrences matches {0..*} matches {    -- ECOG
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0045] occurrences matches {0..1} matches {    -- Kjent risiko for nyrecancer
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0047] occurrences matches {0..4} matches {    -- Kjenter risikofaktorer
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0048,    -- Von hippel lindau
+											at0049,    -- Birth-Hogg-Dubè
+											at0050,    -- Tuberøs sklerose
+											at0051]    -- Annet
+										}
+									}
+								}
+							}
+							ELEMENT[at0052] occurrences matches {0..1} matches {    -- Kjente risikofaktorer annet
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0009] occurrences matches {0..1} matches {    -- Undersøkelser og funn
+						items cardinality matches {1..*; unordered} matches {
+							CLUSTER[at0053] occurrences matches {0..1} matches {    -- CT
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0054] occurrences matches {0..1} matches {    -- Dato for siste CT
+										value matches {
+											DV_DATE matches {*}
+										}
+									}
+									ELEMENT[at0055] occurrences matches {0..2} matches {    -- Type ct undersøkelse
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0056,    -- Thorax
+													at0057]    -- Abdomen
+												}
+											}
+										}
+									}
+									CLUSTER[at0061] occurrences matches {0..2} matches {    -- svulst
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0058] occurrences matches {0..1} matches {    -- Tumorfunn
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0059,    -- Høyre
+															at0060]    -- Venstre
+														}
+													}
+												}
+											}
+											ELEMENT[at0063] occurrences matches {0..1} matches {    -- Største diameter
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"mm">
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {    -- Soliditet
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0065,    -- Solid
+															at0066]    -- Cystisk
+														}
+													}
+												}
+											}
+											ELEMENT[at0070] occurrences matches {0..1} matches {    -- Bosniak
+												value matches {
+													1|[local::at0071],
+													2|[local::at0072],
+													3|[local::at0073],
+													4|[local::at0074],
+													5|[local::at0075]
+												}
+											}
+											ELEMENT[at0076] occurrences matches {0..1} matches {    -- Vekstrate per år
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"mm">
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+								}
+							}
+							allow_archetype CLUSTER[at0105] occurrences matches {0..*} matches {    -- RENAL score
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+					ELEMENT[at0096] occurrences matches {0..7} matches {    -- Biopsi
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0097,    -- Ingen biopsi
+									at0098,    -- Klarcellet
+									at0099,    -- Papillært
+									at0100,    -- Chromofob
+									at0101,    -- Oncocytom
+									at0102,    -- AML
+									at0103]    -- Andre
+								}
+							}
+						}
+					}
+					ELEMENT[at0104] occurrences matches {0..1} matches {    -- Spesifiser annen biopsi
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0109] occurrences matches {0..1} matches {    -- ISUP
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0110,    -- Grad 1
+									at0111,    -- Grad 2
+									at0112,    -- Grad 3
+									at0113]    -- Grad 4
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {    -- ISUP
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype CLUSTER[at0115] occurrences matches {0..*} matches {    -- TNM
+						include
+							archetype_id/value matches {/.*/}
+					}
+					CLUSTER[at0010] occurrences matches {0..1} matches {    -- MDT anbefalinger og pasientens ønske
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0077] occurrences matches {0..1} matches {    -- Oppfølgning
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0078,    -- Observasjon
+											at0079]    -- Behandling
+										}
+									}
+								}
+							}
+							ELEMENT[at0080] occurrences matches {0..4} matches {    -- Behandlingstype
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0081,    -- Partiell nef
+											at0082,    -- Total nef
+											at0083,    -- Cryo
+											at0084]    -- Onkologisk behandling
+										}
+									}
+								}
+							}
+							ELEMENT[at0086] occurrences matches {0..1} matches {    -- Pasientens ønske av oppfølgning
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0087,    -- Ingen spesielle ønsker
+											at0088,    -- Aktiv behandling
+											at0089]    -- Observasjon
+										}
+									}
+								}
+							}
+							ELEMENT[at0090] occurrences matches {0..1} matches {    -- Spesifisert ønsket behandling fra pasient
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0091,    -- Kirurgi
+											at0092]    -- Cryo
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0011] occurrences matches {0..1} matches {    -- Konklusjon
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0093] occurrences matches {0..1} matches {    -- Konkludert behandling
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0094,    -- Observasjon
+											at0095]    -- Behandling
+										}
+									}
+								}
+							}
+							ELEMENT[at0119] occurrences matches {0..4} matches {    -- Behandlingstype
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0120,    -- Partiell nef
+											at0121,    -- Total nef
+											at0122,    -- Cryo
+											at0123]    -- Onkologisk behandling
+										}
+									}
+								}
+							}
+							ELEMENT[at0118] occurrences matches {0..1} matches {    -- Tekst
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0007] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Multidisiplinært møte for nyresvulster">
+					description = <"mdt_nyre">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Henvisende instans">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Fastlege">
+					description = <"Pasienten henviist fra fastlege">
+				>
+				["at0004"] = <
+					text = <"Annet HF">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Avtalespesialist">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Kliniske data">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0009"] = <
+					text = <"Undersøkelser og funn">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"MDT anbefalinger og pasientens ønske">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Konklusjon">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Tilfeldig oppdaget">
+					description = <"definsjon">
+				>
+				["at0013"] = <
+					text = <"Symptomatisk">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Vekt">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Høyde">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"BMI">
+					description = <"bmi">
+				>
+				["at0017"] = <
+					text = <"Nyresvikt">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Kreatinin">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Nyresvikt">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"eGFR">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Grad">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"GRAD I">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"GRAD II">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"GRAD III">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"GRAD IV">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Singel nyre">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Tidligere operert i aktuell nyre">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Abdominalt operert">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Spesifiser adominal operasjobn">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Blodfortynnende">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Nei">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Medisiner">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"ASA">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Marevan">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"DOAK/NOAK">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Charlton commorbitity index CCI">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"ECOG">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Kjent risiko for nyrecancer">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Kjenter risikofaktorer">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Von hippel lindau">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Birth-Hogg-Dubè">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Tuberøs sklerose">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Annet">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Kjente risikofaktorer annet">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"CT">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Dato for siste CT">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Type ct undersøkelse">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Thorax">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Abdomen">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Tumorfunn">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Høyre">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Venstre">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"svulst">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Største diameter">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Soliditet">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Solid">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Cystisk">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Bosniak">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"I">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"II">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"IIF">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"III">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"IV">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Vekstrate per år">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Oppfølgning">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Observasjon">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"Behandling">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"Behandlingstype">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"Partiell nef">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"Total nef">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Cryo">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Onkologisk behandling">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"Pasientens ønske av oppfølgning">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Ingen spesielle ønsker">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Aktiv behandling">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Observasjon">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Spesifisert ønsket behandling fra pasient">
+					description = <"*">
+				>
+				["at0091"] = <
+					text = <"Kirurgi">
+					description = <"*">
+				>
+				["at0092"] = <
+					text = <"Cryo">
+					description = <"*">
+				>
+				["at0093"] = <
+					text = <"Konkludert behandling">
+					description = <"*">
+				>
+				["at0094"] = <
+					text = <"Observasjon">
+					description = <"*">
+				>
+				["at0095"] = <
+					text = <"Behandling">
+					description = <"*">
+				>
+				["at0096"] = <
+					text = <"Biopsi">
+					description = <"*">
+				>
+				["at0097"] = <
+					text = <"Ingen biopsi">
+					description = <"*">
+				>
+				["at0098"] = <
+					text = <"Klarcellet">
+					description = <"*">
+				>
+				["at0099"] = <
+					text = <"Papillært">
+					description = <"*">
+				>
+				["at0100"] = <
+					text = <"Chromofob">
+					description = <"*">
+				>
+				["at0101"] = <
+					text = <"Oncocytom">
+					description = <"*">
+				>
+				["at0102"] = <
+					text = <"AML">
+					description = <"*">
+				>
+				["at0103"] = <
+					text = <"Andre">
+					description = <"*">
+				>
+				["at0104"] = <
+					text = <"Spesifiser annen biopsi">
+					description = <"*">
+				>
+				["at0105"] = <
+					text = <"RENAL score">
+					description = <"*">
+				>
+				["at0109"] = <
+					text = <"ISUP">
+					description = <"*">
+				>
+				["at0110"] = <
+					text = <"Grad 1">
+					description = <"*">
+				>
+				["at0111"] = <
+					text = <"Grad 2">
+					description = <"*">
+				>
+				["at0112"] = <
+					text = <"Grad 3">
+					description = <"*">
+				>
+				["at0113"] = <
+					text = <"Grad 4">
+					description = <"*">
+				>
+				["at0115"] = <
+					text = <"TNM">
+					description = <"*">
+				>
+				["at0116"] = <
+					text = <"ISUP">
+					description = <"*">
+				>
+				["at0118"] = <
+					text = <"Tekst">
+					description = <"*">
+				>
+				["at0119"] = <
+					text = <"Behandlingstype">
+					description = <"*">
+				>
+				["at0120"] = <
+					text = <"Partiell nef">
+					description = <"*">
+				>
+				["at0121"] = <
+					text = <"Total nef">
+					description = <"*">
+				>
+				["at0122"] = <
+					text = <"Cryo">
+					description = <"*">
+				>
+				["at0123"] = <
+					text = <"Onkologisk behandling">
+					description = <"*">
+				>
+			>
+		>
+	>
