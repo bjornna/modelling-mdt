@@ -22,7 +22,7 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "16885bd83ffbaf4fd80d7d8e9950e313",
+      "MD5-CAM-1.0.1" : "d087e8b66a0b0e1bf7cc596948e0f6a4",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -121,19 +121,19 @@
         "@type" : "C_ARCHETYPE_ROOT",
         "rmTypeName" : "EVALUATION",
         "occurrences" : "0..1",
-        "nodeId" : "at0.2",
+        "nodeId" : "at0.5",
         "attributes" : [ ],
         "attributeTuples" : [ ],
-        "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-reason_for_encounter-001.v1",
+        "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-001.v1",
         "referenceType" : "archetypeOverlay"
       }, {
         "@type" : "C_ARCHETYPE_ROOT",
         "rmTypeName" : "EVALUATION",
         "occurrences" : "0..1",
-        "nodeId" : "at0.4",
+        "nodeId" : "at0.2",
         "attributes" : [ ],
         "attributeTuples" : [ ],
-        "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-001.v1",
+        "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-reason_for_encounter-001.v1",
         "referenceType" : "archetypeOverlay"
       } ]
     } ],
@@ -253,6 +253,12 @@
                 } ]
               } ],
               "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0004.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
             } ]
           } ],
           "attributeTuples" : [ ]
@@ -266,7 +272,22 @@
       "termDefinitions" : {
         "en" : { },
         "pt-br" : { },
-        "nb" : { }
+        "nb" : {
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002.1",
+            "text" : "Kontaktårsak",
+            "description" : "Type eller administrativ kategori av helsetjenester som er årsak til at individet oppsøker eller behøver helsetjenester.",
+            "comment" : "Koding av \"kontaktårsak\" med en terminologi foretrekkes når mulig. Eksempler: Helsesjekk før ansettelse, svangerskapskontroll, gynekologisk undersøkelse, preoperativ undersøkelse eller årlig medisinsk kontroll."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Bakgrunn",
+            "description" : "Klinisk eller sosial årsak til at individet oppsøker helsevesenet.",
+            "comment" : "Koding av \"Klinisk problemstilling\" med en terminologi foretrekkes når mulig. Kliniske årsaker kan omfatte helseproblemer, symptomer, eller fysiske sykdomstegn. Eksempler: Helseproblemer - ønske om å slutte å røyke eller vold i hjemmet, symptomer - magesmerter eller kortpusthet, fysiske sykdomstegn - endret bevissthetsnivå. \"Hovedproblemstilling\" kan bli benyttet som et synonym for \"Klinisk kontaktårsak\" i templater."
+          }
+        }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
