@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "c95d8a34fe33cd30bcb7b2f4d22459ce",
+      "MD5-CAM-1.0.1" : "d5a13564dc605864cab1d241817318f1",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5",
       "original_language" : "ISO_639-1::nb"
     },
@@ -9846,7 +9846,12 @@
                             "members" : [ {
                               "@type" : "C_ATTRIBUTE",
                               "rmAttributeName" : "magnitude",
-                              "children" : [ ]
+                              "children" : [ {
+                                "@type" : "C_REAL",
+                                "rmTypeName" : "Real",
+                                "occurrences" : "1..1",
+                                "constraint" : [ ]
+                              } ]
                             }, {
                               "@type" : "C_ATTRIBUTE",
                               "rmAttributeName" : "units",
@@ -10567,7 +10572,12 @@
                             "members" : [ {
                               "@type" : "C_ATTRIBUTE",
                               "rmAttributeName" : "magnitude",
-                              "children" : [ ]
+                              "children" : [ {
+                                "@type" : "C_REAL",
+                                "rmTypeName" : "Real",
+                                "occurrences" : "1..1",
+                                "constraint" : [ ]
+                              } ]
                             }, {
                               "@type" : "C_ATTRIBUTE",
                               "rmAttributeName" : "units",
