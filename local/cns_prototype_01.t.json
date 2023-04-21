@@ -22,7 +22,7 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "4fcf2389d90ed2c41cf1aee16b10b7a8",
+      "MD5-CAM-1.0.1" : "d6dbbfdaed2c7dcfc77f88159fea4a2d",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -6919,7 +6919,14 @@
       "conceptCode" : "at0000",
       "termDefinitions" : {
         "en" : { },
-        "nb" : { }
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "NANO",
+            "description" : "Neurologic Assessment in Neuro-Oncology (NANO) scale"
+          }
+        }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
