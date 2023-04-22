@@ -22,7 +22,7 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "9aae4833ca035b7b1715d88eb3933bbf",
+      "MD5-CAM-1.0.1" : "b7c3ef4ad7da3bb86153f8bfe388638e",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -3215,6 +3215,62 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0004.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_QUANTITY",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "property",
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "occurrences" : "0..1",
+                              "terminologyId" : {
+                                "value" : "openehr"
+                              },
+                              "constraint" : [ "124" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ {
+                            "@type" : "C_ATTRIBUTE_TUPLE",
+                            "members" : [ {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "units",
+                              "children" : [ ]
+                            }, {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "magnitude",
+                              "children" : [ ]
+                            } ],
+                            "tuples" : [ {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_STRING",
+                                "rmTypeName" : "STRING",
+                                "constraint" : [ "kg" ]
+                              }, {
+                                "@type" : "C_REAL",
+                                "rmTypeName" : "REAL",
+                                "constraint" : [ {
+                                  "lower" : 0.0,
+                                  "upper" : 1000.0,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true,
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
+                                } ]
+                              } ]
+                            } ]
+                          } ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
                       "occurrences" : "0..0",
                       "nodeId" : "at0024.1",
                       "attributes" : [ ],
@@ -3379,7 +3435,11 @@
         "nb" : { },
         "fr" : { }
       },
-      "termBindings" : { },
+      "termBindings" : {
+        "LOINC" : {
+          "at0004.1" : "term:LOINC::29463-7"
+        }
+      },
       "terminologyExtracts" : { },
       "valueSets" : { }
     },
@@ -6047,6 +6107,62 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0004.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_QUANTITY",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "property",
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "occurrences" : "0..1",
+                              "terminologyId" : {
+                                "value" : "openehr"
+                              },
+                              "constraint" : [ "122" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ {
+                            "@type" : "C_ATTRIBUTE_TUPLE",
+                            "members" : [ {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "units",
+                              "children" : [ ]
+                            }, {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "magnitude",
+                              "children" : [ ]
+                            } ],
+                            "tuples" : [ {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_STRING",
+                                "rmTypeName" : "STRING",
+                                "constraint" : [ "cm" ]
+                              }, {
+                                "@type" : "C_REAL",
+                                "rmTypeName" : "REAL",
+                                "constraint" : [ {
+                                  "lower" : 0.0,
+                                  "upper" : 1000.0,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true,
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
+                                } ]
+                              } ]
+                            } ]
+                          } ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
                       "occurrences" : "0..0",
                       "nodeId" : "at0018.1",
                       "attributes" : [ ],
@@ -7201,7 +7317,84 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "C5295942ACCCC02840EFBECAA609187A"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Um den Karnofsky-Index darzustellen. Im Original Karnofsky Performance Status Scale (KPS).",
+          "keywords" : [ "KPS", "Bewertung", "funktionell", "Leistung", "Onkologie", "Krebs", "Karnofsky", "Status", "Qualität", "Skala", "Score", "Index" ],
+          "use" : "Der Archetyp wird verwendet, um das Ergebnis einer Bewertung nach Karnofsky-Performance Status (KPS)-Skala darzustellen.\r\n\r\nObwohl in diesem Archetyp auf die Originalarbeit von Karnofsky et al. aus dem Jahr 1949 verwiesen wird, war es nicht möglich, eine Nachbildung zu erhalten, um den ursprünglichen Inhalt sicherzustellen. Dieser Archetyp wurde jedoch so konzipiert, dass er eher die praktische Verwendung den Karnofsky-Index als ein akademisches Konstrukt widerspiegelt, und der aktuelle Wortlaut spiegelt Beschreibungen wider, die in den anderen Referenzen allgemein verwendet werden.",
+          "misuse" : "Darf nicht verwendet werden, um Variationen der Karnofsky-Performance Status-Skala darzustellen, wie z. B. der Thorne-modified Karnofsky-Performance Status (TKPS) oder der Australian-modified Karnofsky-Performance Status (AKPS). Verwenden Sie dazu zweckspezifische Archetypen.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere resultatet av Karnofsky Performance Status (KPS) scale.",
+          "keywords" : [ "KPS", "vurdering", "funksjonell", "funksjon", "onkologi", "kreft", "Karnofsky", "status", "ytelse", "aktivitet", "palliativ", "skår", "indeks" ],
+          "use" : "Brukes til å registrere resultatet av Karnofsky Performance Status (KPS) scale.\r\n\r\nSelv om den originale artikkelen av Karnofsky et al fra 1949 er referert i denne arketypen, har det ikke vært mulig å finne en kopi av originalartikkelen for å verifisere innholdet opp mot den. Denne arketypen har derfor blitt utarbeidet for å reflektere den praktiske bruken av Karnofsky Performance Status scale, i stedet for å være en ren akademisk konstruksjon. Ordlyden er derfor basert på beskrivelser som er funnet i de andre referansene og som er i praktisk bruk.",
+          "misuse" : "Brukes ikke til å registrere variasjoner av KPS skala, slik som Thorne-modifisert Karnofsky (TKPS) eller Australia-modifisert Karnofsky (AKPS). Bruk formålsspesifikke arketyper til dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt"
+          },
+          "purpose" : "*To record the result of a Karnofsky Performance Status (KPS) scale assessment. (en)",
+          "keywords" : [ "*KPS (en)", "*assessment (en)", "*functional (en)", "*performance (en)", "*oncology (en)", "*cancer (en)", "*Karnofsky (en)", "*status (en)", "*quality (en)", "*score (en)", "*index (en)" ],
+          "use" : "*Use to record the result of a Karnofsky Performance Status (KPS) scale assessment.\r\n\r\nWhile the original 1949 paper by Karnofsky et al is referenced in this archetype, it has not been possible to obtain a copy to verify the original content. However, this archetype has been designed to reflect the practical use of Karnofsky Performance Status scale rather than an academic construct, and and the current wording reflects descriptions found in common use within the other references. (en)",
+          "misuse" : "*Not to be used to record variations of the KPS scale, such as the Thorne-modified Karnofsky (TKPS) or the Australia-modified Karnofsky (AKPS). Use purpose-specific archetypes for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the result of a Karnofsky Performance Status (KPS) scale assessment.",
+          "keywords" : [ "KPS", "assessment", "functional", "performance", "oncology", "cancer", "Karnofsky", "status", "quality", "score", "index" ],
+          "use" : "Use to record the result of a Karnofsky Performance Status (KPS) scale assessment.\r\n\r\nWhile the original 1949 paper by Karnofsky et al is referenced in this archetype, it has not been possible to obtain a copy to verify the original content. However, this archetype has been designed to reflect the practical use of Karnofsky Performance Status scale rather than an academic construct and the current wording reflects descriptions found in common use within the other references.",
+          "misuse" : "Not to be used to record variations of the KPS scale, such as the Thorne-modified Karnofsky (TKPS) or the Australia-modified Karnofsky (AKPS). Use purpose-specific archetypes for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Voor het vastleggen van het resultaat van een Karnofsky Performance Status (KPS) schaal meting.",
+          "keywords" : [ "KPS", "Meetinstrument", "Functioneel", "Prestatie", "Oncologie", "Kanker", "Karnofsky", "Status", "Kwaliteit", "Score", "Index" ],
+          "use" : "Gebruik voor het vastleggen voor de uitslag van een Karnofsky Performace Status (KPS) schaal meting. \r\n\r\nHoewel de originele publicatie van Karnofsky er al. uit 1949 als referentie is opgegeven in dit archetype, bleek het niet mogelijk dit origineel te verkrijgen ter verificatie van de originele inhoud. Echter is dit archetype ontwikkeld voor het praktisch gebruik van de KPS in plaats van een academische bron te zijn en de huidige verwoording geeft de beschrijvingen weer zoals gevonden in de andere referenties.",
+          "misuse" : "Niet te gebruiken voor het vastleggen van variaties op de KPS schaal, zoals de Thorne-modified Karnofosky (TKPS) of de Australië aangepaste Karnofsky (AKPS). Gebruik archetypes die speciaal daarvoor ontwikkeld zijn.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.karnofsky_performance_status_scale.v1",
     "differential" : true,
@@ -7334,7 +7527,54 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "34DD848B4F67F69B8E7DC21E5AD244E9"
       },
-      "details" : { }
+      "details" : {
+        "fi" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fi"
+          },
+          "purpose" : "*To record the measured or calculated surface area of a human body.(en)",
+          "keywords" : [ "*body(en)", "*surface(en)", "*area(en)", "*BSA(en)", "*surface area(en)" ],
+          "use" : "*Use to record the measured or calculated surface area of a human body. \r\n\r\nBSA can be used to support clinical decision-making, including but not limited to:\r\n- determine the dosage of chemotherapy and other drugs with a narrow therapeutic index; \r\n- calculation of the cardiac index; and\r\n- calculation of intravenous fluid requirements.(en)",
+          "misuse" : "*Not to be used to record the percentage of body surface area involvement in burns or other skin damage etc. This information should be carried in separate specific archetypes related to burns assessment.\r\n\r\nNot to be used to record the adjusted Body surface area eg a calculation of the BSA of a person with limb amputation, based on other body part measurements and an algorithm - use OBSERVATION.body_surface_area-adjusted.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere måling eller beregning av en persons kroppsoverflate.",
+          "keywords" : [ "kropp", "overflate", "areal", "BSA" ],
+          "use" : "Brukes for å registrere måling eller beregning av en persons kroppsoverflate.\r\n\r\nKroppsoverflaten kan brukes for å understøtte kliniske beslutninger som for eksempel:\r\n- å beregne riktig dose av et legemiddel som har smal terapeutisk indeks som f.eks kjemoterapeutiske medikamenter \r\n- beregning av minuttvolum per overflate (Cardiac Index)\r\n- beregning av behov for intravenøse væsker",
+          "misuse" : "Brukes ikke for å registrere prosentandel av kroppsoverflaten som er påvirket av brannskade eller andre skader i huden. Dette registreres i egne arketyper som er relatert til vurdering av brannskader eller sår.\r\n\r\nBrukes ikke for å registrere justert kroppsoverflate, for eksempel en utregning av kroppsoverflate hos en person som har amputert en kroppsdel. Bruk arketypen OBSERVATION.body_surface_area-adjusted.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the measured or calculated surface area of a human body.",
+          "keywords" : [ "body", "surface", "area", "BSA", "surface area" ],
+          "use" : "Use to record the measured or calculated surface area of a human body. \r\n\r\nBSA can be used to support clinical decision-making, including but not limited to:\r\n- determine the dosage of chemotherapy and other drugs with a narrow therapeutic index; \r\n- calculation of the cardiac index; and\r\n- calculation of intravenous fluid requirements.",
+          "misuse" : "Not to be used to record the percentage of body surface area involvement in burns or other skin damage etc. This information should be carried in separate specific archetypes related to burns assessment.\r\n\r\nNot to be used to record the adjusted Body surface area eg a calculation of the BSA of a person with limb amputation, based on other body part measurements and an algorithm - use OBSERVATION.body_surface_area-adjusted.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.body_surface_area.v1",
     "differential" : true,
@@ -7547,7 +7787,40 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "DA38D7FDB467BD8746408BF41D8C608D"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Definerer semantiske egenskaper ved templaten. ",
+          "keywords" : [ ],
+          "use" : "Benyttes for å angi en semantisk versjonering av templaten. ",
+          "misuse" : "Skal ikke benyttes for noen form for klinisk innhold.",
+          "copyright" : "DIPS AS",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "Defining some metadata variable to be added to a composition. The main purpose is to be able to query for data cross-composition.",
+          "keywords" : [ ],
+          "use" : "Define data which is not related to the clinical content, but only to be used for application or system specific metadata.",
+          "misuse" : "*Do not enter clinical data in this archetype.(nb)",
+          "copyright" : "DIPS AS",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.template_semver_dips.v1",
     "differential" : true,
@@ -7671,7 +7944,36 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "38ea621ca21a04bacf466327c647fe71"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class.",
+          "keywords" : [ "Document, metadata", "IHE", "XDS" ],
+          "use" : "Use to add IHE-XDS aligned metadata to a COMPOSITION.context, which along with existing COMPOSITION attributes, allows the composition to be registered in an IHE-XDS environment.",
+          "copyright" : "© Apperta Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.xds_metadata_dips.v1",
     "differential" : true,
