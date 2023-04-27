@@ -46,7 +46,10 @@
           },
           "codeString" : "nb"
         },
+        "purpose" : "\t\nFor å registrere resultatet av Karnofsky Performance Status (KPS) scale.",
         "keywords" : [ ],
+        "use" : "\t\nBrukes til å registrere resultatet av Karnofsky Performance Status (KPS) scale.",
+        "misuse" : "\t\nBrukes ikke til å registrere variasjoner av KPS skala, slik som Thorne-modifisert Karnofsky (TKPS) eller Australia-modifisert Karnofsky (AKPS). Bruk spesifikke arketyper til dette formålet.",
         "originalResourceUri" : { },
         "otherDetails" : { }
       },
