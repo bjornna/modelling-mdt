@@ -22,7 +22,7 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "e836af61b8fce17db142ce852379d35c",
+      "MD5-CAM-1.0.1" : "644d7b2ceb414f87d950fe289955cb2b",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -128,12 +128,12 @@
         "referenceType" : "archetypeOverlay"
       }, {
         "@type" : "C_ARCHETYPE_ROOT",
-        "rmTypeName" : "EVALUATION",
-        "occurrences" : "0..1",
-        "nodeId" : "at0.4",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..0",
+        "nodeId" : "at0.6",
         "attributes" : [ ],
         "attributeTuples" : [ ],
-        "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-clinical_synopsis-001.v1",
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-progress_note-001.v1",
         "referenceType" : "archetypeOverlay"
       } ]
     } ],
@@ -289,7 +289,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "40315917-477a-4f42-bc89-76993c77485f",
+    "uid" : "3d7f042d-fbaf-4e79-9c0e-0e6a0dc5b982",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -298,19 +298,19 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "1C27320A9B0499317426B81E69A5862D"
+        "PARENT:MD5-CAM-1.0.1" : "2086BD5A6AEF2FDD36BB5AC22480E9B1"
       },
       "details" : { }
     },
-    "parentArchetypeId" : "openEHR-EHR-EVALUATION.clinical_synopsis.v1",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.progress_note.v1",
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-clinical_synopsis-001.v1"
+      "value" : "openEHR-EHR-OBSERVATION.ovl-progress_note-001.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "EVALUATION",
+      "rmTypeName" : "OBSERVATION",
       "nodeId" : "at0000.1",
       "attributes" : [ ],
       "attributeTuples" : [ ]
@@ -320,21 +320,16 @@
       "conceptCode" : "at0000",
       "termDefinitions" : {
         "en" : { },
-        "fa" : { },
-        "ar-sy" : { },
-        "de" : { },
-        "es-ar" : { },
-        "pt-br" : { },
-        "zh-cn" : { },
         "nb" : { },
-        "sv" : { }
+        "es-ar" : { },
+        "nl" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
       "valueSets" : { }
     },
     "adlVersion" : "1.4",
-    "buildUid" : "263a2a2e-9098-49b1-b4ab-1a243de3fbb9",
+    "buildUid" : "b4ea06c2-ad19-43e3-8281-e848816de908",
     "rmName" : "openehr",
     "rmRelease" : "1.1.0",
     "generated" : true,
@@ -351,26 +346,11 @@
         "terminologyId" : {
           "value" : "ISO_639-1"
         },
-        "codeString" : "de"
+        "codeString" : "nb"
       },
       "author" : {
-        "name" : "Nadim Anani",
-        "organisation" : "Health Informatics Centre, Karolinska Institutet, Sweden"
-      },
-      "accreditation" : "fluent in both English and German, Medical Informatics 'MSc' degree from Heidelberg, 2 years professional experience in health informatics, some translation experience, openEHR knowledge.",
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Kirsi Poikela",
-        "organisation" : "Tieto Sweden AB",
-        "email" : "ext.kirsi.poikela@tieto.com"
+        "name" : "Vebjørn Arntzen",
+        "organisation" : "Oslo universitetssykehus HF, Norway"
       },
       "otherDetails" : { }
     }, {
@@ -382,10 +362,11 @@
         "codeString" : "es-ar"
       },
       "author" : {
-        "name" : "Dr. Leonardo Der Jachadurian",
-        "organisation" : "Bitios.com"
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral",
+        "email" : "amarch@cas.austral.edu.ar"
       },
-      "accreditation" : "Medical Doctor (Internal Medicine Specialist)",
+      "accreditation" : "MD",
       "otherDetails" : { }
     }, {
       "@type" : "TRANSLATION_DETAILS",
@@ -393,67 +374,14 @@
         "terminologyId" : {
           "value" : "ISO_639-1"
         },
-        "codeString" : "nb"
+        "codeString" : "nl"
       },
       "author" : {
-        "name" : "Ingrid Heitmann",
-        "organisation" : "NTNU and OUS, Registered nurse",
-        "email" : "john.tore.valand@helse-bergen.no"
+        "name" : "Joost Holslag",
+        "organisation" : "Nedap",
+        "email" : "joost.holslag@nedap.com"
       },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "pt-br"
-      },
-      "author" : {
-        "name" : "Emerson Urushibata",
-        "organisation" : "Universidade de São Paulo"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "ar-sy"
-      },
-      "author" : {
-        "name" : "Mona Saleh"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "fa"
-      },
-      "author" : {
-        "name" : "Shahla Foozonkhah",
-        "organisation" : "Ocean Informatics",
-        "email" : "shahla.foozonkhah@oceaninformatics.com"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "zh-cn"
-      },
-      "author" : {
-        "name" : "MAY L",
-        "organisation" : "CSDC",
-        "email" : "hcn2020@126.com"
-      },
-      "accreditation" : "What goes here?",
+      "accreditation" : "MD",
       "otherDetails" : { }
     } ]
   } ],
