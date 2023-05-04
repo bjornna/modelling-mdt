@@ -22,7 +22,7 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "0c49f6ebb0d13b5b44b9123427a9e6a7",
+      "MD5-CAM-1.0.1" : "0663e147cdc9119d4e91bb567872262d",
       "PARENT:MD5-CAM-1.0.1" : "38876F893CA725F42C8E62C6BE90A970"
     },
     "details" : {
@@ -133,7 +133,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "trajectory_summary",
+          "text" : "Sammendrag av pasientforløp",
           "description" : "Generisk dokument som inneholder sammendrag av helseinformasjon om et individ."
         }
       }
