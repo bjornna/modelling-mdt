@@ -22,7 +22,7 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "bb8f35bb7c974a1469071894c984cb02",
+      "MD5-CAM-1.0.1" : "0c49f6ebb0d13b5b44b9123427a9e6a7",
       "PARENT:MD5-CAM-1.0.1" : "38876F893CA725F42C8E62C6BE90A970"
     },
     "details" : {
@@ -267,6 +267,13 @@
           "rmTypeName" : "CLUSTER",
           "occurrences" : "0..0",
           "nodeId" : "at0003.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0008.1",
           "attributes" : [ ],
           "attributeTuples" : [ ]
         } ]
