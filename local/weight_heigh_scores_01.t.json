@@ -22,7 +22,7 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "d3efb09f69dd21aefbdbcb450b0e96e6",
+      "MD5-CAM-1.0.1" : "961f12cb5b2390e01689824aa2ef1c17",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -1137,6 +1137,10 @@
                         "children" : [ {
                           "@type" : "C_COMPLEX_OBJECT",
                           "rmTypeName" : "DV_QUANTITY",
+                          "defaultValue" : {
+                            "units" : "kg",
+                            "@type" : "DV_QUANTITY"
+                          },
                           "attributes" : [ {
                             "@type" : "C_ATTRIBUTE",
                             "rmAttributeName" : "property",
