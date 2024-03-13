@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "2ff87a95b651881e78df878b88988d1c",
+      "MD5-CAM-1.0.1" : "664f8661c177fcdb7b0f59051568fe23",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -11475,6 +11475,7 @@
         }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
           "nodeId" : "at0007.1",
           "attributes" : [ {
             "@type" : "C_ATTRIBUTE",
