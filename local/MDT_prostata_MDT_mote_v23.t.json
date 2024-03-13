@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "1f29b155e8e1bc2ca38c6d6d36b9e27e",
+      "MD5-CAM-1.0.1" : "aa096f31b6ab1fcb8cbf11dc5bc29d6d",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -11438,7 +11438,20 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "1F54B7094BCC06BAC7372388688BA277"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.isup_grade_group_dips.v1",
     "differential" : true,
@@ -11477,7 +11490,7 @@
           "at0001.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0001.1",
-            "text" : "ISUP Grade Group",
+            "text" : "Høyeste ISUP gradering",
             "description" : "Angir høyeste ISUP gradering fra hhv. system eller fusjonsbiopsi. \n\nISUP Grade Group graderes fra 1 til 5. De ulike graderingene tilsvarer forskjellige verdier i Gleason-skåringen."
           }
         }
