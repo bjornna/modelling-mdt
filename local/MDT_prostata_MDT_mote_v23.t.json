@@ -24,7 +24,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "664f8661c177fcdb7b0f59051568fe23",
+      "MD5-CAM-1.0.1" : "5f757894226c17a942430df7450131c7",
       "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5"
     },
     "details" : {
@@ -1220,17 +1220,19 @@
                 "children" : [ {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
+                  "occurrences" : "1..1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
                     "children" : [ {
                       "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
                       "terminologyId" : {
                         "value" : "SNOMED-CT"
                       },
                       "constraint" : [ ],
+                      "selectedTerminologies" : [ "SNOMED-CT" ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "SNOMED-CT",
                         "code" : "126906006",
@@ -11505,6 +11507,7 @@
                 "children" : [ {
                   "@type" : "C_INTEGER",
                   "rmTypeName" : "INTEGER",
+                  "occurrences" : "1..1",
                   "constraint" : [ {
                     "lower" : 2,
                     "upper" : 2,
@@ -11539,13 +11542,6 @@
             "code" : "at0001.1",
             "text" : "Høyeste ISUP gradering",
             "description" : "Angir høyeste ISUP gradering fra hhv. system eller fusjonsbiopsi. \n\nISUP Grade Group graderes fra 1 til 5. De ulike graderingene tilsvarer forskjellige verdier i Gleason-skåringen."
-          },
-          "at0007" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0007",
-            "text" : "%≥G4",
-            "description" : "Antall kjerner med ISUP Gradering ≥ 4.",
-            "comment" : "Brukes ikke i dette sammendraget. "
           },
           "at0007.1" : {
             "@type" : "ARCHETYPE_TERM",
